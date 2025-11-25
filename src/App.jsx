@@ -1,12 +1,17 @@
-import './App.css'
+import { BrowserRouter , Routes , Route  } from 'react-router';
+import Home from './pages/Home';
+import Recipes from './pages/Recipes';
+
 
 function App() {
-
-
   return (
     <>
-      <h1 className='text-red-500'>Oussama</h1>
-      <h2>test</h2>
+    <BrowserRouter>
+    <Routes>
+      <Route  path='/' element={<Home/>}/>
+      <Route  path='/Recipes' element={<Recipes/>}/>
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
