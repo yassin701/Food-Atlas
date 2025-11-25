@@ -1,25 +1,18 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001/recipes"
+const API_URL = "http://localhost:3002/recipes";
 
 export const getRecipes = async () => {
     const response = await axios.get(API_URL);
-
-    if(!response.ok) {
-        throw new Error("Failed to fetch recipes");
-    }
-
     return response.data;
-}
+};
 
-export const AddRecipes = async (newRecipe) => {
+export const getRecipeById = async (id) => {
+    const response = await axios.get(`${API_URL}/${id}`);
+    return response.data;
+};
+
+export const addRecipe = async (newRecipe) => {
     const response = await axios.post(API_URL, newRecipe);
-
-     if(!response.ok) {
-        throw new Error("Failed to Add new recipe");
-    }
-
-    return response.data
-}
-
-
+    return response.data;
+};
