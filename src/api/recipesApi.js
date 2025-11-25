@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001/"
+const API_URL = "http://localhost:3001/recipes"
 
 export const getRecipes = async () => {
     const response = await axios.get(API_URL);
@@ -11,3 +11,15 @@ export const getRecipes = async () => {
 
     return response.data;
 }
+
+export const AddRecipes = async (newRecipe) => {
+    const response = await axios.post(API_URL, newRecipe);
+
+     if(!response.ok) {
+        throw new Error("Failed to Add new recipe");
+    }
+
+    return response.data
+}
+
+
