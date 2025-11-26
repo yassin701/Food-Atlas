@@ -7,7 +7,7 @@ export default function Recipes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/recipes")
+      .get("http://localhost:3002/recipes")
       .then((response) => {
         setRecipes(response.data);
       })

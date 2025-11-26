@@ -1,25 +1,18 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001/recipes"
+const BASE_URL = "http://localhost:3002";
 
 export const getRecipes = async () => {
-    const response = await axios.get(API_URL);
+  const res = await axios.get(`${BASE_URL}/recipes`);
+  return res.data;
+};
 
-    if(!response.ok) {
-        throw new Error("Failed to fetch recipes");
-    }
+export const getRecipeById = async (id) => {
+  const res = await axios.get(`${BASE_URL}/recipes/${id}`);
+  return res.data;
+};
 
-    return response.data;
-}
-
-export const AddRecipes = async (newRecipe) => {
-    const response = await axios.post(API_URL, newRecipe);
-
-     if(!response.ok) {
-        throw new Error("Failed to Add new recipe");
-    }
-
-    return response.data
-}
-
-
+export const addRecipe = async (recipe) => {
+  const res = await axios.post(`${BASE_URL}/recipes`, recipe);
+  return res.data;
+};

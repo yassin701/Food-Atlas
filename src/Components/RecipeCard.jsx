@@ -1,5 +1,5 @@
-
-export default function RecipeCard({ recipe }) {
+import React from "react";
+export default function RecipesCard({ recipe }) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden">
       
@@ -10,6 +10,10 @@ export default function RecipeCard({ recipe }) {
           alt={recipe.name} 
           className="w-full h-56 object-cover"
         />
+
+        <span className="absolute bottom-2 right-2 bg-gray-800 text-white text-sm px-3 py-1 rounded-md shadow">
+          {recipe.date || "Jan 14, 2021"}
+        </span>
       </div>
 
       {/* CONTENT */}
@@ -28,5 +32,5 @@ export default function RecipeCard({ recipe }) {
       </div>
 
     </div>
-  )
+  );
 }
