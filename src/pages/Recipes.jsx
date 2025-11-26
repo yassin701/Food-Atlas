@@ -1,13 +1,13 @@
-import {useEffect, useState } from "react";
-import RecipesCard from "./RecipesCard";
+import { useEffect, useState } from "react";
+import RecipeCard from "../Components/RecipeCard";
 import axios from "axios";
-
 
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/recipes")
+    axios
+      .get("http://localhost:3002/recipes")
       .then((response) => {
         setRecipes(response.data);
       })
@@ -17,9 +17,9 @@ export default function Recipes() {
   }, []);
 
   return (
-    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {recipes.map((recipe) => (
-        <RecipesCard key={recipe.id} recipe={recipe} />
+        <RecipeCard key={recipe.id} recipe={recipe} />
       ))}
     </div>
   );
