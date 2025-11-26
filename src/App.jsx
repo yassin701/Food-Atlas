@@ -1,7 +1,9 @@
 import Details from "./pages/Details"; 
 
 import './App.css'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Navbar from './Components/Navbar'
 
 function App() {
 import { BrowserRouter , Routes , Route  } from 'react-router';
@@ -11,20 +13,16 @@ import Recipes from './pages/Recipes';
 
 function App() {
   return (
-  <BrowserRouter>
-  <Routes>
-
-       <Route path="/recipes/:id" element={<Details />} />
-  </Routes>
-  </BrowserRouter>
-    <>
-    <BrowserRouter>
-    <Routes>
-      <Route  path='/' element={<Home/>}/>
-      <Route  path='/Recipes' element={<Recipes/>}/>
-    </Routes>
-    </BrowserRouter>
-    </>
+    
+     <Router>
+      <>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+      </>
+     </Router>
+    
   )
 }
 

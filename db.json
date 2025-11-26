@@ -7,7 +7,7 @@
       "country": "Morocco",
       "image": "https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg",
       "description": "Un plat traditionnel marocain à base de semoule et légumes.",
-      "ingredients": ["semoule","légumes","poulet","épices","pois chiches"],
+      "ingredients": "- semoule\n- légumes\n- poulet\n- épices\n- pois chiches",
       "steps": "1. Cuire la semoule.\n2. Préparer les légumes.\n3. Mélanger et servir."
     },
     {
@@ -17,7 +17,7 @@
       "country": "Mexico",
       "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
       "description": "Délicieux tacos garnis de viande et légumes frais.",
-      "ingredients": ["tortillas","viande hachée","tomates","salade","fromage"],
+      "ingredients": "- tortillas\n- viande hachée\n- tomates\n- salade\n- fromage",
       "steps": "1. Cuire la viande.\n2. Garnir les tortillas.\n3. Ajouter toppings et servir."
     },
     {
@@ -27,7 +27,7 @@
       "country": "Italy",
       "image": "https://images.pexels.com/photos/4109084/pexels-photo-4109084.jpeg",
       "description": "La pizza classique italienne avec tomate, mozzarella et basilic.",
-      "ingredients": ["pâte","tomate","mozzarella","basilic"],
+      "ingredients": "- pâte\n- tomate\n- mozzarella\n- basilic",
       "steps": "1. Étaler la pâte.\n2. Ajouter la sauce.\n3. Cuire au four."
     },
     {
@@ -37,7 +37,7 @@
       "country": "Japan",
       "image": "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg",
       "description": "Sushi traditionnel avec riz vinaigré et poisson frais.",
-      "ingredients": ["riz","saumon","algues","vinaigre"],
+      "ingredients": "- riz\n- saumon\n- algues\n- vinaigre",
       "steps": "1. Préparer le riz.\n2. Rouler les sushi.\n3. Couper et servir."
     },
     {
@@ -47,7 +47,7 @@
       "country": "Thailand",
       "image": "https://images.pexels.com/photos/4611983/pexels-photo-4611983.jpeg",
       "description": "Nouilles sautées thaïlandaises aux légumes et crevettes.",
-      "ingredients": ["nouilles","crevettes","sauce soja","œufs"],
+      "ingredients": "- nouilles\n- crevettes\n- sauce soja\n- œufs",
       "steps": "1. Cuire les nouilles.\n2. Sauter les légumes.\n3. Mélanger et servir."
     },
     {
@@ -57,7 +57,7 @@
       "country": "USA",
       "image": "https://images.pexels.com/photos/1639567/pexels-photo-1639567.jpeg",
       "description": "Burger classique avec steak, fromage et légumes.",
-      "ingredients": ["pain","steak","fromage","salade","tomates"],
+      "ingredients": "- pain\n- steak\n- fromage\n- salade\n- tomates",
       "steps": "1. Cuire le steak.\n2. Monter le burger.\n3. Servir."
     },
     {
@@ -67,7 +67,7 @@
       "country": "Morocco",
       "image": "https://images.pexels.com/photos/5690403/pexels-photo-5690403.jpeg",
       "description": "Poulet mijoté aux olives et citron confit.",
-      "ingredients": ["poulet","citron confit","olives","épices"],
+      "ingredients": "- poulet\n- citron confit\n- olives\n- épices",
       "steps": "1. Mijoter le poulet.\n2. Ajouter olives.\n3. Servir chaud."
     },
     {
@@ -77,7 +77,7 @@
       "country": "Lebanon",
       "image": "https://images.pexels.com/photos/616353/pexels-photo-616353.jpeg",
       "description": "Boulettes de pois chiches frites.",
-      "ingredients": ["pois chiches","ail","persil","cumin"],
+      "ingredients": "- pois chiches\n- ail\n- persil\n- cumin",
       "steps": "1. Mixer pois chiches.\n2. Former boules.\n3. Frire."
     },
     {
@@ -87,7 +87,7 @@
       "country": "Spain",
       "image": "https://images.pexels.com/photos/128388/pexels-photo-128388.jpeg",
       "description": "Riz espagnol aux fruits de mer et légumes.",
-      "ingredients": ["riz","crevettes","moules","poivrons"],
+      "ingredients": "- riz\n- crevettes\n- moules\n- poivrons",
       "steps": "1. Cuire riz.\n2. Ajouter fruits de mer.\n3. Mélanger."
     },
     {
@@ -97,7 +97,7 @@
       "country": "India",
       "image": "https://images.pexels.com/photos/7410388/pexels-photo-7410388.jpeg",
       "description": "Poulet crémeux aux épices indiennes.",
-      "ingredients": ["poulet","crème","épices","tomates"],
+      "ingredients": "- poulet\n- crème\n- épices\n- tomates",
       "steps": "1. Cuire poulet.\n2. Ajouter sauce.\n3. Laisser mijoter."
     },
     {
@@ -107,7 +107,7 @@
       "country": "UK",
       "image": "https://images.pexels.com/photos/10309729/pexels-photo-10309729.jpeg",
       "description": "Poisson frit servi avec frites croustillantes.",
-      "ingredients": ["poisson","farine","pommes de terre"],
+      "ingredients": "- poisson\n- farine\n- pommes de terre",
       "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
     },
     {
@@ -117,7 +117,7 @@
       "country": "Turkey",
       "image": "https://images.pexels.com/photos/4611984/pexels-photo-4611984.jpeg",
       "description": "Sandwich oriental garni de viande marinée.",
-      "ingredients": ["poulet","épices","pain pita","légumes"],
+      "ingredients": "- poulet\n- épices\n- pain pita\n- légumes",
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
     },
     {
@@ -127,7 +127,7 @@
       "country": "Japan",
       "image": "https://images.pexels.com/photos/884600/pexels-photo-884600.jpeg",
       "description": "Nouilles japonaises servies dans un bouillon riche.",
-      "ingredients": ["nouilles","bouillon","poulet","œuf"],
+      "ingredients": "- nouilles\n- bouillon\n- poulet\n- œuf",
       "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
     },
     {
@@ -137,7 +137,7 @@
       "country": "France",
       "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg",
       "description": "Crêpes fines sucrées ou salées.",
-      "ingredients": ["farine","lait","œufs","beurre"],
+      "ingredients": "- farine\n- lait\n- œufs\n- beurre",
       "steps": "1. Préparer pâte.\n2. Cuire.\n3. Garnir."
     },
     {
@@ -147,8 +147,18 @@
       "country": "Tunisia",
       "image": "https://images.pexels.com/photos/7190390/pexels-photo-7190390.jpeg",
       "description": "Œufs pochés dans une sauce tomate épicée.",
-      "ingredients": ["tomates","œufs","poivrons","épices"],
+      "ingredients": "- tomates\n- œufs\n- poivrons\n- épices",
       "steps": "1. Cuire tomates.\n2. Ajouter œufs.\n3. Servir."
+    },
+    {
+      "id": "16",
+      "name": "Fish 1 & Chips yassine",
+      "category": "European",
+      "country": "UK",
+      "image": "https://images.pexels.com/photos/10309729/pexels-photo-10309729.jpeg",
+      "description": "Poisson frit servi avec frites croustillantes.",
+      "ingredients": "- poisson\n- farine\n- pommes de terre",
+      "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
     }
   ]
 }
