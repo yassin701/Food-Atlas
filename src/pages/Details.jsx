@@ -11,14 +11,25 @@ export default function Details() {
   useEffect(() => {
     getRecipeById(id)
       .then(data => {
-        setRecipe(data);
+        setRecipe(data || null); // fallback null
         setError(false);
       })
       .catch(() => setError(true));
   }, [id]);
 
-  if (error) return <p className="text-red-500 text-center mt-20 text-lg font-semibold">Recette non trouvée !</p>;
-  if (!recipe) return <p className="text-gray-500 text-center mt-20 text-lg">Chargement...</p>;
+  if (error)
+    return (
+      <p className="text-red-500 text-center mt-20 text-lg font-semibold">
+        Recette non trouvée !
+      </p>
+    );
+
+  if (!recipe)
+    return (
+      <p className="text-gray-500 text-center mt-20 text-lg">
+        Chargement...
+      </p>
+    );
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -30,27 +41,39 @@ export default function Details() {
       </button>
 
       <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
-        <img 
-          src={recipe.image} 
-          alt={recipe.name} 
-          className="w-full h-70 object-cover"
-        />
+        {recipe.image && (
+          <img 
+            src={recipe.image} 
+            alt={recipe.name || "Recipe Image"} 
+            className="w-full h-70 object-cover"
+          />
+        )}
 
         <div className="p-6">
-          <h1 className="text-4xl font-extrabold mb-2 text-gray-800">{recipe.name}</h1>
-          <p className="text-gray-500 mb-4">{recipe.country} — {recipe.category}</p>
-          <p className="text-gray-700 mb-6">{recipe.description}</p>
+          <h1 className="text-4xl font-extrabold mb-2 text-gray-800">
+            {recipe.name || "Recette sans nom"}
+          </h1>
+          <p className="text-gray-500 mb-4">
+            {(recipe.country || "Pays inconnu")} — {(recipe.category || "Catégorie inconnue")}
+          </p>
+          <p className="text-gray-700 mb-6">{recipe.description || "Pas de description disponible."}</p>
 
+          {/* Ingrédients */}
           <div className="mb-6">
             <h3 className="text-2xl font-semibold mb-2 text-gray-800">Ingrédients</h3>
             <ul className="list-disc list-inside space-y-1 text-gray-700">
-              {recipe.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+              {(Array.isArray(recipe.ingredients) ? recipe.ingredients : []).map((ing, i) => (
+                <li key={i}>{ing}</li>
+              ))}
             </ul>
           </div>
 
+          {/* Étapes */}
           <div>
             <h3 className="text-2xl font-semibold mb-2 text-gray-800">Étapes</h3>
-            <p className="whitespace-pre-line text-gray-700 leading-relaxed">{recipe.steps}</p>
+            <p className="whitespace-pre-line text-gray-700 leading-relaxed">
+              {recipe.steps || "Pas d'instructions disponibles."}
+            </p>
           </div>
         </div>
       </div>
