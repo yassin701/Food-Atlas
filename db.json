@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Couscous Marocain",
       "category": "African",
       "country": "Morocco",
@@ -11,7 +11,7 @@
       "steps": "1. Cuire la semoule.\n2. Préparer les légumes.\n3. Mélanger et servir."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Tacos Mexicains",
       "category": "American",
       "country": "Mexico",
@@ -21,7 +21,7 @@
       "steps": "1. Cuire la viande.\n2. Garnir les tortillas.\n3. Ajouter toppings et servir."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Pizza Margherita",
       "category": "European",
       "country": "Italy",
@@ -31,7 +31,7 @@
       "steps": "1. Étaler la pâte.\n2. Ajouter la sauce.\n3. Cuire au four."
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sushi Japonais",
       "category": "Asian",
       "country": "Japan",
@@ -41,7 +41,7 @@
       "steps": "1. Préparer le riz.\n2. Rouler les sushi.\n3. Couper et servir."
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Pad Thaï",
       "category": "Asian",
       "country": "Thailand",
@@ -51,7 +51,7 @@
       "steps": "1. Cuire les nouilles.\n2. Sauter les légumes.\n3. Mélanger et servir."
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Burger Américain",
       "category": "American",
       "country": "USA",
@@ -61,7 +61,7 @@
       "steps": "1. Cuire le steak.\n2. Monter le burger.\n3. Servir."
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Tajine de Poulet",
       "category": "African",
       "country": "Morocco",
@@ -71,7 +71,7 @@
       "steps": "1. Mijoter le poulet.\n2. Ajouter olives.\n3. Servir chaud."
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Falafel",
       "category": "Middle Eastern",
       "country": "Lebanon",
@@ -81,7 +81,7 @@
       "steps": "1. Mixer pois chiches.\n2. Former boules.\n3. Frire."
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Paella",
       "category": "European",
       "country": "Spain",
@@ -91,7 +91,7 @@
       "steps": "1. Cuire riz.\n2. Ajouter fruits de mer.\n3. Mélanger."
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Butter Chicken",
       "category": "Asian",
       "country": "India",
@@ -101,7 +101,7 @@
       "steps": "1. Cuire poulet.\n2. Ajouter sauce.\n3. Laisser mijoter."
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Fish & Chips",
       "category": "European",
       "country": "UK",
@@ -111,7 +111,7 @@
       "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Chawarma",
       "category": "Middle Eastern",
       "country": "Turkey",
@@ -121,7 +121,7 @@
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Ramen",
       "category": "Asian",
       "country": "Japan",
@@ -131,7 +131,7 @@
       "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Crêpes Françaises",
       "category": "European",
       "country": "France",
@@ -141,7 +141,7 @@
       "steps": "1. Préparer pâte.\n2. Cuire.\n3. Garnir."
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Shakshuka",
       "category": "Middle Eastern",
       "country": "Tunisia",
