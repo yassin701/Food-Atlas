@@ -29,7 +29,7 @@ export default function Home() {
   // Load and randomize recipes on mount
   useEffect(() => {
     // Replace 3001 with your actual JSON Server port
-    fetch('http://localhost:3001/recipes') 
+    fetch('http://localhost:3002/recipes') 
       .then(res => res.json())
       .then(data => {
         // Shuffle and pick 4
@@ -106,7 +106,7 @@ export default function Home() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a 
-              href="/recipes" 
+              href="/recipes"  
               className="bg-yellow-500 font-medium px-6 py-3 text-white rounded-lg hover:bg-white hover:text-zinc-950 border-2 border-yellow-500 hover:border-zinc-950 transition-all duration-200 inline-block"
             >
               Browse Recipes
