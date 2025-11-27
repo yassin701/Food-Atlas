@@ -15,7 +15,7 @@ export default function AddRecipe() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     let isValid = true;
     let newErrors = {};
