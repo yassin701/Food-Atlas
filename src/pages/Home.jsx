@@ -226,7 +226,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <p className="text-zinc-600 text-sm line-clamp-2 flex-grow mt-2">
+                  <p className="text-zinc-600 text-sm line-clamp-2 grow mt-2">
                     {recipe.description}
                   </p>
 
