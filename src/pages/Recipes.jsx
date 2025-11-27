@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import RecipeCard from "../Components/RecipeCard";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { ArrowLeft } from "lucide-react";
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [countryFilter, setCountryFilter] = useState("ALL");
@@ -10,7 +10,7 @@ export default function Recipes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/recipes")
+      .get("http://localhost:3001/recipes")
       .then((response) => {
         setRecipes(response.data);
       })
@@ -27,12 +27,22 @@ export default function Recipes() {
   return (
     <div className="p-6">
       <div className="mb-6 mx-12 flex justify-between items-center">
-        <button onClick={() => navigate("/")} className="px-5 py-2 bg-gray-200 rounded-full hover:bg-gray-300 transition flex items-center gap-2">
-          ← Retour
+        <button
+          onClick={() => navigate("/")}
+          className="group mb-8 inline-flex items-center gap-2 text-zinc-600 hover:text-yellow-600 transition-colors duration-200"
+        >
+          <div className="p-2 bg-white border border-zinc-200 rounded-full group-hover:border-yellow-500 transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+          </div>
+          <span className="font-medium">Back to Home</span>
         </button>
 
-        <select className="border border-gray-300 p-2 rounded-lg shadow-sm" value={countryFilter}
-          onChange={(e) => setCountryFilter(e.target.value)}>
+        <select
+          className="border border-zinc-200 p-2.5 rounded-lg bg-white shadow-sm text-zinc-600 group-hover:border-yellow-500 group-hover:text-yellow-600
+          transition-colors duration-200 cursor-pointer"
+          value={countryFilter}
+          onChange={(e) => setCountryFilter(e.target.value)}
+        >
           <option value="ALL">All Countries</option>
           <option value="Morocco">Morocco</option>
           <option value="Italy">Italy</option>
