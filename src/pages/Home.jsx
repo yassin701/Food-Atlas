@@ -146,7 +146,7 @@ export default function Home() {
                 </div>
                 
                 {/* Content Section */}
-                <div className="p-6 flex flex-col gap-3 flex-grow">
+                <div className="p-6 flex flex-col gap-3 grow">
                   
                   {/* Header Row: Title & Flag */}
                   <div className="flex justify-between items-start gap-2">
@@ -163,12 +163,11 @@ export default function Home() {
                        <img 
                          src={`https://flagsapi.com/${getCountryCode(recipe.country)}/flat/64.png`} 
                          alt={recipe.country}
-                         className="w-8 h-8 object-contain"
-                       />
+                         className="w-8 h-8 object-contain"/>
                     </div>
                   </div>
 
-                  <p className="text-zinc-600 text-sm line-clamp-2 flex-grow mt-2">
+                  <p className="text-zinc-600 text-sm line-clamp-2 grow mt-2">
                     {recipe.description}
                   </p>
                   
