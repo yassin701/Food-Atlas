@@ -1,16 +1,6 @@
 {
   "recipes": [
     {
-      "id": "1",
-      "name": "Couscous Marocain",
-      "category": "African",
-      "country": "Morocco",
-      "image": "https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg",
-      "description": "Un plat traditionnel marocain à base de semoule et légumes.",
-      "ingredients": "- semoule\n- légumes\n- poulet\n- épices\n- pois chiches",
-      "steps": "1. Cuire la semoule.\n2. Préparer les légumes.\n3. Mélanger et servir."
-    },
-    {
       "id": "2",
       "name": "Tacos Mexicains",
       "category": "American",

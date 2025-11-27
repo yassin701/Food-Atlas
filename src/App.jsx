@@ -3,16 +3,17 @@ import Home from "./pages/Home";          // ممكن تتركو فالبداي�
 import Recipes from "./pages/Recipes";    // ممكن زملائك يصاوبوها من بعد
 import Details from "./pages/Details";
 import AddRecipe from "./pages/AddRecipes";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />   
         <Route path="/recipes" element={<Recipes />} /> 
         <Route path="/recipes/:id" element={<Details />} /> 
          <Route path="/admin/add" element={<AddRecipe />} />
-    
       </Routes>
     </Router>
   );
