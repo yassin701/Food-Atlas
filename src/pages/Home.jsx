@@ -4,7 +4,6 @@ import { Star, ChevronLeft, ChevronRight, ArrowUpRight, Phone, Mail } from 'luci
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [featuredRecipes, setFeaturedRecipes] = useState([]);
 
   // Helper to map country names to ISO 2-letter codes for flagsapi
@@ -30,7 +29,7 @@ export default function Home() {
   // Load and randomize recipes on mount
   useEffect(() => {
     // Replace 3001 with your actual JSON Server port
-    fetch('http://localhost:3002/recipes') 
+    fetch('http://localhost:3001/recipes') 
       .then(res => res.json())
       .then(data => {
         // Shuffle and pick 4

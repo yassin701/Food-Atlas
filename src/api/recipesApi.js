@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3002";
+const BASE_URL = "http://localhost:3001";
 
 export const getRecipes = async () => {
   const res = await axios.get(`${BASE_URL}/recipes`);
