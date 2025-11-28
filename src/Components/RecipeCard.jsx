@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUtensils } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Pencil, Trash2 } from "lucide-react";
 
 const getCountryCode = (countryName) => {
   const codes = {
@@ -18,9 +19,9 @@ const getCountryCode = (countryName) => {
     France: "FR",
     Tunisia: "TN",
   };
-  return codes[countryName] || "US"; // Default fallback
+  return codes[countryName] || "US";
 };
-export default function RecipesCard({ recipe }) {
+export default function RecipesCard({ recipe, isAdmin }) {
   return (
     <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-200">
       <div className="overflow-hidden rounded-t-2xl">
@@ -50,21 +51,40 @@ export default function RecipesCard({ recipe }) {
           />
         </div>
 
-        
-
         <div className="flex items-center justify-center text-gray-600 mb-4">
           <FaUtensils className="mr-2 text-yellow-500" />
           <span>{recipe.ingredients.split("\n").length} Ingredients</span>
         </div>
 
-        <div className="flex justify-center">
-          <Link
-            to={`/recipes/${recipe.id}`}
-            className=" bg-yellow-500 hover:bg-yellow-600  text-white text-sm font-semibold px-5 py-2 rounded-md transition"
-          >
-            View More
-          </Link>
-        </div>
+         {isAdmin && (
+          <div className="flex justify-center w-full">
+            <Link
+              to={`/recipes/${recipe.id}`}
+              className="bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold px-5 py-2 rounded-md transition"
+            >
+              View More
+            </Link>
+          </div>
+        )}
+        {!isAdmin && (
+          <div className="flex justify-between mt-3 w-full">
+            <Link
+              to={`/admin/edit/${recipe.id}`}
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md text-sm transition"
+            >
+              <Pencil className="w-4 h-4" />
+              Update
+            </Link>
+
+            <Link
+              to={`/admin/delete/${recipe.id}`}
+              className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-md text-sm transition"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
