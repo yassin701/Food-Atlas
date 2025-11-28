@@ -3,12 +3,14 @@ import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";  
 import Details from "./pages/Details";
 import AddRecipe from "./pages/AddRecipes";
+import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
 import EditRecipe from "./pages/EditRecipes";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />   
         <Route path="/recipes" element={<Recipes />} /> 

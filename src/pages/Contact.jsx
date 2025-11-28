@@ -92,7 +92,7 @@ export default function Contact() {
             {errors.email && (
               <p className="text-red-500 text-sm">{errors.email}</p>
             )}
-          </div> 
+          </div>
 
           {/* MESSAGE */}
           <div>
