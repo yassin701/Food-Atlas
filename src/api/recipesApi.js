@@ -17,3 +17,8 @@ export const addRecipe = async (recipe) => {
   return res.data;
 };
 
+
+export const deleteRecipe = async (id) => {
+  const res = await axios.delete(`${BASE_URL}/recipes/${id}`);
+  return res.data;
+};

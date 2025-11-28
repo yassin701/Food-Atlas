@@ -3,6 +3,7 @@ import RecipeCard from "../Components/RecipeCard";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [countryFilter, setCountryFilter] = useState("ALL");
@@ -46,7 +47,7 @@ export default function Recipes() {
 
       <div className="mb-6 mx-12 justify-between items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {filteredRecipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
+          <RecipeCard key={recipe.id} recipe={recipe} isAdmin={true}/>
         ))}
       </div>
     </div>
