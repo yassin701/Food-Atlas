@@ -203,7 +203,7 @@ export default function Home() {
                 ></div>
 
                 {/* Content Section */}
-                <div className="p-6 flex flex-col gap-3 flex-grow">
+                <div className="p-6 flex flex-col gap-3 ">
                   {/* Header Row: Title & Flag */}
                   <div className="flex justify-between items-start gap-2">
                     <div className="flex flex-col">
