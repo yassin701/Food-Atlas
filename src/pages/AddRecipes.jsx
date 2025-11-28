@@ -8,174 +8,164 @@ export default function AddRecipe() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [image, setImage] = useState(null);
-
+  const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const CLOUD_NAME = "dqronp5bo";
+  const UPLOAD_PRESET = "food_uploads";
+
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", UPLOAD_PRESET);
+
+    const res = await axios.post(
+      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+      formData
+    );
+
+    return res.data.secure_url;
+  };
+
+  const handleAddClick = (e) => {
     e.preventDefault();
-    let isValid = true;
+
+    // Validation before showing modal
     let newErrors = {};
+    if (!name.trim()) newErrors.name = "Le nom est obligatoire.";
+    if (!country.trim()) newErrors.country = "Le pays est obligatoire.";
+    if (!category.trim()) newErrors.category = "La catégorie est obligatoire.";
+    if (!description.trim()) newErrors.description = "La description est obligatoire.";
+    if (!ingredients.trim()) newErrors.ingredients = "Les ingrédients sont obligatoires.";
+    if (!imageFile) newErrors.image = "Veuillez importer une image.";
 
-    if (!name.trim()) {
-      newErrors.name = "Le nom est obligatoire.";
-      isValid = false;
-    }
-    if (!country.trim()) {
-      newErrors.country = "Le pays est obligatoire.";
-      isValid = false;
-    }
-    if (!category.trim()) {
-      newErrors.category = "La catégorie est obligatoire.";
-      isValid = false;
-    }
-    if (!description.trim()) {
-      newErrors.description = "La description est obligatoire.";
-      isValid = false;
-    }
-    if (!ingredients.trim()) {
-      newErrors.ingredients = "Les ingrédients sont obligatoires.";
-      isValid = false;
-    }
-    if (!image) {
-      newErrors.image = "Veuillez importer une image.";
-      isValid = false;
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
     }
 
-    setErrors(newErrors);
-    if (!isValid) return;
+    setErrors({});
+    setShowModal(true); // Show confirm modal
+  };
 
-    // Préparer les données (image en base64)
-    const fileReader = new FileReader();
-    fileReader.onloadend = async () => {
+  const handleConfirm = async () => {
+    setShowModal(false);
+    try {
+      const imageUrl = await uploadToCloudinary(imageFile);
+
       const recipeData = {
         name,
         country,
         category,
         description,
         ingredients,
-        image: fileReader.result, // base64 version
+        image: imageUrl,
       };
 
-      try {
-        await axios.post("http://localhost:3002/recipes", recipeData);
-        setSuccess("Recette ajoutée !");
-        setTimeout(() => navigate("/recipes"), 1000);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+      await axios.post("http://localhost:3001/recipes", recipeData);
+      setSuccess("Recette ajoutée !");
+      setTimeout(() => navigate("/recipes"), 1000);
 
-    fileReader.readAsDataURL(image);
+    } catch (error) {
+      console.error("Erreur:", error);
+    }
   };
 
-   return (
+  const handleCancel = () => setShowModal(false);
+
+  return (
     <div className="flex justify-center mt-10 px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg border"
-      >
+      <form className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg border">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Ajouter une recette
         </h2>
 
-        {/* Name */}
-        <label className="font-medium">Nom</label>
+        {/* Inputs */}
         <input
-          className="w-full border-2 border-gray-300 p-2 rounded-lg mb-2 focus:ring-2 focus:ring-orange-400"
+          placeholder="Nom"
+          className="w-full border-2 p-2 rounded mb-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nom de la recette"
         />
-        {errors.name && <p className="text-red-500 text-sm mb-3">{errors.name}</p>}
+        {errors.name && <p className="text-red-500">{errors.name}</p>}
 
-        {/* Country */}
-        <label className="font-medium">Pays</label>
         <input
-          className="w-full border-2 border-gray-300 p-2 rounded-lg mb-2 focus:ring-2 focus:ring-orange-400"
+          placeholder="Pays"
+          className="w-full border-2 p-2 rounded mb-2"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
-          placeholder="Pays d'origine"
         />
-        {errors.country && <p className="text-red-500 text-sm mb-3">{errors.country}</p>}
+        {errors.country && <p className="text-red-500">{errors.country}</p>}
 
-        {/* Category */}
-        <label className="font-medium">Catégorie</label>
         <input
-          className="w-full border-2 border-gray-300 p-2 rounded-lg mb-2 focus:ring-2 focus:ring-orange-400"
+          placeholder="Catégorie"
+          className="w-full border-2 p-2 rounded mb-2"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-          placeholder="Ex: Dessert, Plat..."
         />
-        {errors.category && (
-          <p className="text-red-500 text-sm mb-3">{errors.category}</p>
-        )}
+        {errors.category && <p className="text-red-500">{errors.category}</p>}
 
-        {/* Description */}
-        <label className="font-medium">Description</label>
         <textarea
-          className="w-full border-2 border-gray-300 p-2 rounded-lg mb-2 focus:ring-2 focus:ring-orange-400"
+          placeholder="Description"
+          className="w-full border-2 p-2 rounded mb-2"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Décrivez la recette"
-        ></textarea>
-        {errors.description && (
-          <p className="text-red-500 text-sm mb-3">{errors.description}</p>
-        )}
+        />
+        {errors.description && <p className="text-red-500">{errors.description}</p>}
 
-        {/* Ingredients */}
-        <label className="font-medium">Ingrédients</label>
         <textarea
-          className="w-full border-2 border-gray-300 p-2 rounded-lg mb-2 focus:ring-2 focus:ring-orange-400"
+          placeholder="Ingrédients"
+          className="w-full border-2 p-2 rounded mb-2"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
-          placeholder="Liste des ingrédients"
-        ></textarea>
-        {errors.ingredients && (
-          <p className="text-red-500 text-sm mb-3">{errors.ingredients}</p>
-        )}
+        />
+        {errors.ingredients && <p className="text-red-500">{errors.ingredients}</p>}
 
-        {/* Image Upload */}
-        <label className="font-medium">Image</label>
         <input
           type="file"
           accept="image/*"
-          className="w-full border-2 border-gray-300 p-2 rounded-lg cursor-pointer mb-2 bg-gray-50"
-          onChange={(e) => {
-            const file = e.target.files[0];
-            if (file) setImage(URL.createObjectURL(file));
-          }}
+          className="w-full border-2 p-2 rounded mb-2"
+          onChange={(e) => setImageFile(e.target.files[0])}
         />
-        {errors.image && (
-          <p className="text-red-500 text-sm mb-3">{errors.image}</p>
-        )}
+        {errors.image && <p className="text-red-500">{errors.image}</p>}
 
-        {/* Preview */}
-        {image && (
-          <img
-            src={image}
-            className="w-full h-40 object-cover rounded-lg shadow mb-3"
-          />
-        )}
+        {success && <p className="text-green-600 text-center mb-2">{success}</p>}
 
-        {/* Success */}
-        {success && (
-          <p className="text-green-600 font-medium text-center mb-4">
-            {success}
-          </p>
-        )}
-
-        {/* Submit */}
+        {/* Button */}
         <button
-          type="submit"
+          onClick={handleAddClick}
           className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg font-semibold"
         >
           Ajouter
         </button>
       </form>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-xl shadow-lg w-80 text-center">
+            <p className="mb-4 text-gray-700">Tu es sûr de vouloir ajouter cette recette ?</p>
+            <div className="flex justify-around">
+              <button
+                onClick={handleConfirm}
+                className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+              >
+                Oui
+              </button>
+              <button
+                onClick={handleCancel}
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+              >
+                Non
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
