@@ -16,3 +16,4 @@ export const addRecipe = async (recipe) => {
   const res = await axios.post(`${BASE_URL}/recipes`, recipe);
   return res.data;
 };
+

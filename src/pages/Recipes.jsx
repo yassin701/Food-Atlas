@@ -27,15 +27,7 @@ export default function Recipes() {
   return (
     <div className="p-6">
       <div className="mb-6 mx-12 flex justify-between items-center">
-        <button
-          onClick={() => navigate("/")}
-          className="group mb-8 inline-flex items-center gap-2 text-zinc-600 hover:text-yellow-600 transition-colors duration-200"
-        >
-          <div className="p-2 bg-white border border-zinc-200 rounded-full group-hover:border-yellow-500 transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-          </div>
-          <span className="font-medium">Back to Home</span>
-        </button>
+     
 
         <select
           className="border border-zinc-200 p-2.5 rounded-lg bg-white shadow-sm text-zinc-600 group-hover:border-yellow-500 group-hover:text-yellow-600

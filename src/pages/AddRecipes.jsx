@@ -12,9 +12,9 @@ export default function AddRecipe() {
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState("");
   const [showModal, setShowModal] = useState(false);
-
   const navigate = useNavigate();
 
+   {/*Cloudin*/}
   const CLOUD_NAME = "dqronp5bo";
   const UPLOAD_PRESET = "food_uploads";
 
