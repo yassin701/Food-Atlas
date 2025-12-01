@@ -7,11 +7,14 @@ import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
 import EditRecipe from "./pages/EditRecipes";
 import Admin from "./pages/Admin";
+import DeleteRecipe from "./pages/DeleteRecipe";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<Home />} />   
         <Route path="/recipes" element={<Recipes />} /> 
@@ -20,6 +23,7 @@ function App() {
         <Route path="/admin/add" element={<AddRecipe />} />
         <Route path="/admin/edit" element={<EditRecipe />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/delete/:id" element={<DeleteRecipe />} />
     
       </Routes>
     </Router>

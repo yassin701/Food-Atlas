@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaUtensils } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from "lucide-react";
+import DeleteRecipe from "../pages/DeleteRecipe";
 
 const getCountryCode = (countryName) => {
   const codes = {
@@ -22,6 +23,11 @@ const getCountryCode = (countryName) => {
   return codes[countryName] || "US";
 };
 export default function RecipesCard({ recipe, isAdmin }) {
+  const [isOpen , setIsOpen]= useState(false)
+
+  const handleDeleteClick = () => {
+  setIsOpen(true);
+  };
   return (
     <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-200">
       <div className="overflow-hidden rounded-t-2xl">
@@ -56,7 +62,7 @@ export default function RecipesCard({ recipe, isAdmin }) {
           <span>{recipe.ingredients.split("\n").length} Ingredients</span>
         </div>
 
-         {isAdmin && (
+         {!isAdmin && (
           <div className="flex justify-center w-full">
             <Link
               to={`/recipes/${recipe.id}`}
@@ -66,7 +72,7 @@ export default function RecipesCard({ recipe, isAdmin }) {
             </Link>
           </div>
         )}
-        {!isAdmin && (
+        {isAdmin && (
           <div className="flex justify-between mt-3 w-full">
             <Link
               to={`/admin/edit/${recipe.id}`}
@@ -76,16 +82,21 @@ export default function RecipesCard({ recipe, isAdmin }) {
               Update
             </Link>
 
-            <Link
-              to={`/admin/delete/${recipe.id}`}
+            <button
+              onClick={()=>handleDeleteClick()}
               className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-md text-sm transition"
             >
               <Trash2 className="w-4 h-4" />
               Delete
-            </Link>
+            </button>
           </div>
+        )}
+
+        {isOpen && (
+          <DeleteRecipe id={recipe.id} isOpen={setIsOpen} />
         )}
       </div>
     </div>
+      
   );
 }

@@ -131,16 +131,6 @@
       "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
     },
     {
-      "id": "14",
-      "name": "Crêpes Françaises",
-      "category": "European",
-      "country": "France",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart14_pwpc6f.jpg",
-      "description": "Crêpes fines sucrées ou salées.",
-      "ingredients": "- farine\n- lait\n- œufs\n- beurre",
-      "steps": "1. Préparer pâte.\n2. Cuire.\n3. Garnir."
-    },
-    {
       "id": "15",
       "name": "Shakshuka",
       "category": "Middle Eastern",
@@ -149,61 +139,6 @@
       "description": "Œufs pochés dans une sauce tomate épicée.",
       "ingredients": "- tomates\n- œufs\n- poivrons\n- épices",
       "steps": "1. Cuire tomates.\n2. Ajouter œufs.\n3. Servir."
-    },
-    {
-      "id": "16",
-      "name": "Fish 1 & Chips yassine",
-      "category": "European",
-      "country": "UK",
-      "image": "https://images.pexels.com/photos/10309729/pexels-photo-10309729.jpeg",
-      "description": "Poisson frit servi avec frites croustillantes.",
-      "ingredients": "- poisson\n- farine\n- pommes de terre",
-      "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
-    },
-    {
-      "id": "779a",
-      "name": "Tajin",
-      "country": "Morocco",
-      "category": "African",
-      "description": "test",
-      "ingredients": "test",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274337/onxcfbhd64fn7xvwk6gd.jpg"
-    },
-    {
-      "id": "64f7",
-      "name": "test",
-      "country": "test",
-      "category": "test",
-      "description": "test",
-      "ingredients": "test",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274599/e07odjev8zyxh4xsoyvm.jpg"
-    },
-    {
-      "id": "a84b",
-      "name": "test",
-      "country": "test ",
-      "category": "hhhhhhhhh",
-      "description": "hhhhhhhhh",
-      "ingredients": "hhhhhh",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274837/wkmcadia0uqw1whaelq8.jpg"
-    },
-    {
-      "id": "378f",
-      "name": "tajin",
-      "country": "maroc",
-      "category": "afrecin",
-      "description": "hhh",
-      "ingredients": "hhh",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764338099/cs0xqsjbipbjxaerlpsl.jpg"
-    },
-    {
-      "id": "42bc",
-      "name": "tacos",
-      "country": "Mexico",
-      "category": "American",
-      "description": "hhh",
-      "ingredients": "hhh",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764338263/vilxucgbu8zokgv0vwwi.jpg"
     }
   ]
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { useEffect, useState } from "react";
 import RecipesCard from "../Components/RecipeCard";
+import DeleteRecipe from "./DeleteRecipe";
 import axios from "axios";
 
 const getCountryCode = (countryName) => {
@@ -28,6 +29,9 @@ const getCountryCode = (countryName) => {
 export default function Admin() {
     const [countryFilter, setCountryFilter] = useState("ALL");
   const [recipes, setRecipes] = useState([]);
+  const [deleteRecipeId, setDeleteRecipeId] = useState(null);
+
+
   useEffect(() => {
   axios
     .get("http://localhost:3001/recipes")
@@ -62,9 +66,91 @@ const filteredRecipes =
 
       <div className="mb-6 mx-12 justify-between items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {filteredRecipes.map((recipe) => (
-          <RecipesCard key={recipe.id} recipe={recipe} isAdmin={false} />
+          <RecipesCard
+            key={recipe.id}
+            recipe={recipe}
+            isAdmin={true}
+            onDelete={() => setDeleteRecipeId(recipe.id)} // <-- passe la fonction
+          />
         ))}
       </div>
+
+      {deleteRecipeId && (
+        <DeleteRecipe
+          id={deleteRecipeId}
+          isOpen={setDeleteRecipeId} // <-- contrôle l'ouverture
+        />
+      )}
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+// import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import { Plus } from "lucide-react";
+// import RecipesCard from "../Components/RecipeCard";
+// import DeleteRecipe from "./DeleteRecipe";
+// import axios from "axios";
+
+// export default function Admin() {
+//   const [countryFilter, setCountryFilter] = useState("ALL");
+//   const [recipes, setRecipes] = useState([]);
+//   const [deleteRecipeId, setDeleteRecipeId] = useState(null); // <-- id de la recette à supprimer
+
+//   useEffect(() => {
+//     axios
+//       .get("http://localhost:3001/recipes")
+//       .then((response) => setRecipes(response.data))
+//       .catch((error) => console.error("Erreur :", error));
+//   }, []);
+
+//   const filteredRecipes =
+//     countryFilter === "ALL"
+//       ? recipes
+//       : recipes.filter((recipe) => recipe.country === countryFilter);
+
+//   return (
+//     <div className="min-h-screen bg-stone-50 px-6 sm:px-20 py-10 relative">
+//       <div className="flex justify-between items-center mb-10">
+//         <h1 className="font-serif text-3xl font-bold text-zinc-900">
+//           Admin — Manage Recipes
+//         </h1>
+
+//         <Link
+//           to="/admin/add"
+//           className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black px-5 py-3 rounded-lg shadow-lg transition"
+//         >
+//           <Plus className="w-5 h-5" />
+//           Add New Recipe
+//         </Link>
+//       </div>
+
+//       <div className="mb-6 mx-12 justify-between items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+//         {filteredRecipes.map((recipe) => (
+//           <RecipesCard
+//             key={recipe.id}
+//             recipe={recipe}
+//             isAdmin={true}
+//             onDelete={() => setDeleteRecipeId(recipe.id)} // <-- passe la fonction
+//           />
+//         ))}
+//       </div>
+
+//       {deleteRecipeId && (
+//         <DeleteRecipe
+//           id={deleteRecipeId}
+//           isOpen={setDeleteRecipeId} // <-- contrôle l'ouverture
+//         />
+//       )}
+//     </div>
+//   );
+// }
+
