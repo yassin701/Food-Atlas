@@ -186,6 +186,15 @@
       "description": "hhhhhhhhh",
       "ingredients": "hhhhhh",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274837/wkmcadia0uqw1whaelq8.jpg"
+    },
+    {
+      "id": "fc56",
+      "name": "test has",
+      "country": "italy",
+      "category": "plat",
+      "description": "nnnn",
+      "ingredients": "llll",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764340723/u36ap9iabwu5co6oqb60.jpg"
     }
   ]
 }

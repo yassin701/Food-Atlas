@@ -6,6 +6,7 @@ import AddRecipe from "./pages/AddRecipes";
 import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
 import EditRecipe from "./pages/EditRecipes";
+import Admin from "./pages/Admin"
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/recipes/:id" element={<Details />} /> 
         <Route path="/admin/add" element={<AddRecipe />} />
-        <Route path="/admin/edit" element={<EditRecipe />} />
+        <Route path="/admin/edit/:id" element={<EditRecipe />} />
+        <Route path="/admin" element={<Admin/>}/>
+
     
       </Routes>
     </Router>
