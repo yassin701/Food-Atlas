@@ -9,9 +9,12 @@ export default function AddRecipe() {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState("");
+  const [steps, setSteps] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
+
+
 
   const navigate = useNavigate();
 
@@ -74,7 +77,7 @@ export default function AddRecipe() {
 
       toast.success("Recette ajoutée avec succès ! 🎉");
 
-      setTimeout(() => navigate("/recipes"), 4000);
+      setTimeout(() => navigate("/recipes"), 1000);
     } catch (error) {
       console.error(error);
       toast.error("Erreur lors de l'ajout ❌");
@@ -84,6 +87,8 @@ export default function AddRecipe() {
   const handleCancel = () => setShowModal(false);
 
   return (
+
+
     <div className="flex justify-center mt-10 px-4">
       <form className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg border">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
@@ -122,6 +127,14 @@ export default function AddRecipe() {
           onChange={(e) => setDescription(e.target.value)}
         />
         {errors.description && <p className="text-red-500">{errors.description}</p>}
+
+        <textarea
+          placeholder="Steps"
+          className="w-full border-2 p-2 rounded mb-2"
+          value={steps}
+          onChange={(e) => setSteps(e.target.value)}
+        />
+        {errors.steps && <p className="text-red-500">{errors.steps}</p>}
 
         <textarea
           placeholder="Ingrédients"
