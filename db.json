@@ -121,16 +121,6 @@
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
     },
     {
-      "id": "13",
-      "name": "Ramen",
-      "category": "Asian",
-      "country": "Japan",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart13_vuimp5.jpg",
-      "description": "Nouilles japonaises servies dans un bouillon riche.",
-      "ingredients": "- nouilles\n- bouillon\n- poulet\n- œuf",
-      "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
-    },
-    {
       "id": "14",
       "name": "Crêpes Françaises",
       "category": "European",
@@ -141,31 +131,24 @@
       "steps": "1. Préparer pâte.\n2. Cuire.\n3. Garnir."
     },
     {
-      "id": "d49d",
-      "name": "Salma",
-      "country": "Italy",
-      "category": "European",
-      "description": "salma hamqa ",
-      "ingredients": "basla maticha bayd ",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764602674/itvkxowpuizdxo45awxn.jpg"
+      "id": "bb0c",
+      "name": "Pizza",
+      "country": "Morocco ",
+      "category": "African",
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "steps": "a\na\na\na",
+      "ingredients": "1\n1\n1\n1\n1",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764611631/xzmutxrj2i5ucyouibyk.jpg"
     },
     {
-      "id": "7a88",
-      "name": "pizza",
-      "country": "Italy ",
-      "category": "European",
-      "description": "pizza hut ",
-      "ingredients": "-tometto -chees -souce ",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764602994/cbiabxkxrrdkakiisrez.jpg"
-    },
-    {
-      "id": "5f3d",
-      "name": "coscos",
+      "id": "9305",
+      "name": "yassine",
       "country": "Morocco",
       "category": "African",
-      "description": "hhh",
-      "ingredients": "- vergeteble- onion- falfal",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764603174/kbc8biie4v4pngsq0o2v.jpg"
+      "description": "tesr",
+      "steps": "test",
+      "ingredients": "test",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764611787/hymo8ttmrkewwhiirat1.jpg"
     }
   ]
 }
