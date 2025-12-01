@@ -9,50 +9,14 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import videoBg from '../../public/Hero_Video_Generation_for_Food_Atlas.mp4'
 // import db from '../../db.json'; // Un-comment if needed for fallback, but we are using fetch now
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [featuredRecipes, setFeaturedRecipes] = useState([]);
 
-  //Animation
-  const row1Ref = useRef(null);
-  const row2Ref = useRef(null);
-  // ... (for row3 if needed)
-  
-  // Ref for the overall container (used for GSAP context scope)
-  const containerRef = useRef(null);
-  useGSAP(
-    () => {
-      // --- Row 1 Animation (Right to Left) ---
-      const tl1 = gsap.timeline({
-        repeat: -1,
-        defaults: { ease: "none", duration: 15 }, // Faster speed
-      });
-      // Target the unique ref for Row 1
-      tl1.fromTo(
-        row1Ref.current,
-        { x: "-100%" },
-        { x: "100%" } // Moves left
-      );
-
-      // --- Row 2 Animation (Left to Right) ---
-      const tl2 = gsap.timeline({
-        repeat: -1,
-        defaults: { ease: "none", duration: 15 }, // Slower speed
-      });
-      // Target the unique ref for Row 2
-      tl2.fromTo(
-        row2Ref.current,
-        { x: "100%" }, // Start off-screen to the left
-        { x: "-100%" } // Moves right
-      );
-
-      // Both animations run simultaneously because they are defined inside the same useGSAP
-    },
-    { scope: containerRef }
-  ); // Scope is attached to the parent container
-
+ 
   // Helper to map country names to ISO 2-letter codes for flagsapi
   const getCountryCode = (countryName) => {
     const codes = {
@@ -136,48 +100,33 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={containerRef} className="hero-flags w-full bg-white border border-stone-200">
-    <div className="flag-row row-1 w-full overflow-hidden"> 
-        {/* Row 1 Ref */}
-        <div ref={row1Ref} className="marquee-inner w-full flex gap-8">
-            <img src="https://flagsapi.com/BE/flat/64.png"/>
-            <img src="https://flagsapi.com/ME/flat/64.png" />
-            <img src="https://flagsapi.com/MO/flat/64.png" />
-            <img src="https://flagsapi.com/US/flat/64.png" />
-            <img src="https://flagsapi.com/FR/flat/64.png" />
-            <img src="https://flagsapi.com/GA/flat/64.png" />
-            <img src="https://flagsapi.com/KR/flat/64.png" />
-            <img src="https://flagsapi.com/IS/flat/64.png" />
-            <img src="https://flagsapi.com/MA/flat/64.png" />
-            <img src="https://flagsapi.com/PT/flat/64.png" />
-            <img src="https://flagsapi.com/PS/flat/64.png" />
-            <img src="https://flagsapi.com/IR/flat/64.png" />
-            <img src="https://flagsapi.com/ES/flat/64.png" />
-            <img src="https://flagsapi.com/EG/flat/64.png" />
-            
+      {/* Hero Section */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* The Overlay (Optional: makes text more readable) */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+        {/* The Video */}
+        <video 
+          src={videoBg} 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* The Content */}
+        <div className="relative z-20 flex flex-col items-center justify-center h-full text-white px-8 text-center">
+          <h1 className="text-5xl sm:text-7xl font-serif font-bold mb-6">Welcome to Food Atlas</h1>
+          <p className="text-xl sm:text-2xl mb-8 max-w-2xl">Discover authentic recipes from around the world</p>
+          <a 
+            href="/recipes"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200"
+          >
+            Explore Recipes
+          </a>
         </div>
-    </div>
-    
-    <div className="flag-row row-2 w-full overflow-hidden">
-        {/* Row 2 Ref */}
-        <div ref={row2Ref} className="marquee-inner w-full flex gap-8">
-            <img src="https://flagsapi.com/BE/flat/64.png"/>
-            <img src="https://flagsapi.com/ME/flat/64.png" />
-            <img src="https://flagsapi.com/MO/flat/64.png" />
-            <img src="https://flagsapi.com/US/flat/64.png" />
-            <img src="https://flagsapi.com/FR/flat/64.png" />
-            <img src="https://flagsapi.com/GA/flat/64.png" />
-            <img src="https://flagsapi.com/KR/flat/64.png" />
-            <img src="https://flagsapi.com/IS/flat/64.png" />
-            <img src="https://flagsapi.com/MA/flat/64.png" />
-            <img src="https://flagsapi.com/PT/flat/64.png" />
-            <img src="https://flagsapi.com/PS/flat/64.png" />
-            <img src="https://flagsapi.com/IR/flat/64.png" />
-            <img src="https://flagsapi.com/ES/flat/64.png" />
-            <img src="https://flagsapi.com/EG/flat/64.png" />
-        </div>
-    </div>
-</section>
+      </section>
 
       {/* Discover Recipes Section (Updated) */}
       <section className="py-16 px-8 sm:px-20 bg-stone-50">
