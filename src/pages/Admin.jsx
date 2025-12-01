@@ -94,7 +94,7 @@ export default function Admin() {
       {isDeleteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/40 backdrop-blur-sm transition-all">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all scale-100">
-            
+
             {/* Modal Header */}
             <div className="bg-stone-50 px-6 py-4 border-b border-stone-100 flex justify-between items-center">
               <h3 className="text-lg font-bold text-zinc-900 flex items-center gap-2">
