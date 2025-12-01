@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function AddRecipe() {
   const [name, setName] = useState("");
@@ -10,11 +11,11 @@ export default function AddRecipe() {
   const [ingredients, setIngredients] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState("");
   const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
 
-   {/*Cloudin*/}
+  // Cloudinary
   const CLOUD_NAME = "dqronp5bo";
   const UPLOAD_PRESET = "food_uploads";
 
@@ -31,11 +32,12 @@ export default function AddRecipe() {
     return res.data.secure_url;
   };
 
+  // Validate & show modal
   const handleAddClick = (e) => {
     e.preventDefault();
 
-    // Validation before showing modal
     let newErrors = {};
+
     if (!name.trim()) newErrors.name = "Le nom est obligatoire.";
     if (!country.trim()) newErrors.country = "Le pays est obligatoire.";
     if (!category.trim()) newErrors.category = "La catégorie est obligatoire.";
@@ -49,11 +51,13 @@ export default function AddRecipe() {
     }
 
     setErrors({});
-    setShowModal(true); // Show confirm modal
+    setShowModal(true);
   };
 
+  // Confirm add
   const handleConfirm = async () => {
     setShowModal(false);
+
     try {
       const imageUrl = await uploadToCloudinary(imageFile);
 
@@ -67,11 +71,13 @@ export default function AddRecipe() {
       };
 
       await axios.post("http://localhost:3001/recipes", recipeData);
-      setSuccess("Recette ajoutée !");
-      setTimeout(() => navigate("/recipes"), 1000);
 
+      toast.success("Recette ajoutée avec succès ! 🎉");
+
+      setTimeout(() => navigate("/recipes"), 4000);
     } catch (error) {
-      console.error("Erreur:", error);
+      console.error(error);
+      toast.error("Erreur lors de l'ajout ❌");
     }
   };
 
@@ -133,8 +139,6 @@ export default function AddRecipe() {
         />
         {errors.image && <p className="text-red-500">{errors.image}</p>}
 
-        {success && <p className="text-green-600 text-center mb-2">{success}</p>}
-
         {/* Button */}
         <button
           onClick={handleAddClick}
@@ -144,7 +148,7 @@ export default function AddRecipe() {
         </button>
       </form>
 
-      {/* Modal */}
+      {/* Modal confirm */}
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-xl shadow-lg w-80 text-center">
@@ -166,6 +170,9 @@ export default function AddRecipe() {
           </div>
         </div>
       )}
+
+      {/* Toast uniquement pour cette page */}
+      <Toaster position="top-center" />
     </div>
   );
 }
