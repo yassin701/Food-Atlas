@@ -40,13 +40,14 @@ export default function AddRecipe() {
     e.preventDefault();
 
     let newErrors = {};
+    if (!name.trim()) newErrors.name = "Name is required.";
+    if (!country.trim()) newErrors.country = "Country is required.";
+    if (!category.trim()) newErrors.category = "Category is required.";
+    if (!description.trim()) newErrors.description = "Description is required.";
+    if (!steps.trim()) newErrors.steps = "Steps are required.";
+    if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required.";
+    if (!imageFile) newErrors.image = "Please upload an image.";
 
-    if (!name.trim()) newErrors.name = "Le nom est obligatoire.";
-    if (!country.trim()) newErrors.country = "Le pays est obligatoire.";
-    if (!category.trim()) newErrors.category = "La catégorie est obligatoire.";
-    if (!description.trim()) newErrors.description = "La description est obligatoire.";
-    if (!ingredients.trim()) newErrors.ingredients = "Les ingrédients sont obligatoires.";
-    if (!imageFile) newErrors.image = "Veuillez importer une image.";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -69,6 +70,7 @@ export default function AddRecipe() {
         country,
         category,
         description,
+        steps,
         ingredients,
         image: imageUrl,
       };
@@ -77,7 +79,7 @@ export default function AddRecipe() {
 
       toast.success("Recette ajoutée avec succès ! 🎉");
 
-      setTimeout(() => navigate("/recipes"), 1000);
+      setTimeout(() => navigate("/admin"), 500);
     } catch (error) {
       console.error(error);
       toast.error("Erreur lors de l'ajout ❌");
@@ -89,68 +91,85 @@ export default function AddRecipe() {
   return (
 
 
-    <div className="flex justify-center mt-10 px-4">
-      <form className="w-full max-w-md bg-white p-6 rounded-2xl shadow-lg border">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          Ajouter une recette
-        </h2>
+<div className="flex justify-center mt-12 px-4">
+  <form className="w-full max-w-lg bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
+    <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
+      Add a Recipe
+    </h2>
 
-        {/* Inputs */}
+    {/* Inputs */}
+    <div className="space-y-4">
+      <div>
         <input
-          placeholder="Nom"
-          className="w-full border-2 p-2 rounded mb-2"
+          placeholder="Name"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        {errors.name && <p className="text-red-500">{errors.name}</p>}
+        {errors.name && <p className="text-red-500 mt-1 text-sm">{errors.name}</p>}
+      </div>
 
+      <div>
         <input
-          placeholder="Pays"
-          className="w-full border-2 p-2 rounded mb-2"
+          placeholder="Country"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
         />
-        {errors.country && <p className="text-red-500">{errors.country}</p>}
+        {errors.country && <p className="text-red-500 mt-1 text-sm">{errors.country}</p>}
+      </div>
 
+      <div>
         <input
-          placeholder="Catégorie"
-          className="w-full border-2 p-2 rounded mb-2"
+          placeholder="Category"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
-        {errors.category && <p className="text-red-500">{errors.category}</p>}
+        {errors.category && <p className="text-red-500 mt-1 text-sm">{errors.category}</p>}
+      </div>
 
+      <div>
         <textarea
           placeholder="Description"
-          className="w-full border-2 p-2 rounded mb-2"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        {errors.description && <p className="text-red-500">{errors.description}</p>}
+        {errors.description && <p className="text-red-500 mt-1 text-sm">{errors.description}</p>}
+      </div>
 
+      <div>
         <textarea
           placeholder="Steps"
-          className="w-full border-2 p-2 rounded mb-2"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
         />
-        {errors.steps && <p className="text-red-500">{errors.steps}</p>}
+        {errors.steps && <p className="text-red-500 mt-1 text-sm">{errors.steps}</p>}
+      </div>
 
+      <div>
         <textarea
-          placeholder="Ingrédients"
-          className="w-full border-2 p-2 rounded mb-2"
+          placeholder="Ingredients"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
         />
-        {errors.ingredients && <p className="text-red-500">{errors.ingredients}</p>}
+        {errors.ingredients && <p className="text-red-500 mt-1 text-sm">{errors.ingredients}</p>}
+      </div>
 
+      <div>
         <input
           type="file"
           accept="image/*"
-          className="w-full border-2 p-2 rounded mb-2"
+          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
           onChange={(e) => setImageFile(e.target.files[0])}
         />
-        {errors.image && <p className="text-red-500">{errors.image}</p>}
+        {errors.image && <p className="text-red-500 mt-1 text-sm">{errors.image}</p>}
+      </div>
+    </div>
+
 
         {/* Button */}
         <button
@@ -161,11 +180,16 @@ export default function AddRecipe() {
         </button>
       </form>
 
-      {/* Modal confirm */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-xl shadow-lg w-80 text-center">
-            <p className="mb-4 text-gray-700">Tu es sûr de vouloir ajouter cette recette ?</p>
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          {/* Overlay background */}
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300"></div>
+
+          {/* Modal content */}
+          <div className="relative bg-white p-8 rounded-xl shadow-lg w-70 text-center z-10">
+            <p className="mb-20 text-gray-600">
+              Tu es sûr de vouloir ajouter cette recette ?
+            </p>
             <div className="flex justify-around">
               <button
                 onClick={handleConfirm}
@@ -183,6 +207,7 @@ export default function AddRecipe() {
           </div>
         </div>
       )}
+
 
       {/* Toast uniquement pour cette page */}
       <Toaster position="top-center" />
