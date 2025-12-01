@@ -47,7 +47,7 @@ export default function Recipes() {
 
       <div className="mb-6 mx-12 justify-between items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {filteredRecipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} isAdmin={true}/>
+          <RecipeCard key={recipe.id} recipe={recipe} isAdmin={false}/>
         ))}
       </div>
     </div>
