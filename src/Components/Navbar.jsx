@@ -40,16 +40,8 @@ export default function Navbar() {
             <a href="/admin" className="hover:text-yellow-500 hover:font-medium transition">Admin</a>
           </div>
 
-          <div className="hidden sm:block">
-            <a 
-              href="/recipes" 
-              className="bg-white font-medium px-4 py-2 text-zinc-950 rounded-lg border border-zinc-950 hover:bg-yellow-500 hover:text-white hover:border-yellow-500 transition-all duration-200 inline-block"
-            >
-              Explore Recipes
-            </a>
-          </div>
-
-          <button 
+         
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="block sm:hidden text-zinc-950 text-2xl"
           >
@@ -65,13 +57,7 @@ export default function Navbar() {
           <a href="/recipes" className="hover:text-yellow-500" onClick={() => setIsMobileMenuOpen(false)}>Recipes</a>
           <a href="/contact" className="hover:text-yellow-500" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           <a href="/admin" className="hover:text-yellow-500" onClick={() => setIsMobileMenuOpen(false)}>Admin</a>
-          <a 
-            href="/recipes" 
-            className="bg-yellow-500 font-medium px-4 py-2 text-white rounded-lg transition-all duration-200"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Explore Recipes
-          </a>
+
         </div>
       )}
     </header>
