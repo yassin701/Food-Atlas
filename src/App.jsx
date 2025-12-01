@@ -8,8 +8,10 @@ import Contact from "./pages/Contact";
 import EditRecipe from "./pages/EditRecipes";
 import Admin from "./pages/Admin";
 
+
 function App() {
   return (
+
     <Router>
       <Navbar />
       <Routes>
@@ -20,7 +22,6 @@ function App() {
         <Route path="/admin/add" element={<AddRecipe />} />
         <Route path="/admin/edit" element={<EditRecipe />} />
         <Route path="/admin" element={<Admin />} />
-    
       </Routes>
     </Router>
   );
