@@ -10,8 +10,10 @@ import Admin from "./pages/Admin";
 import DeleteRecipe from "./pages/DeleteRecipe";
 import { Toaster } from "react-hot-toast";
 
+
 function App() {
   return (
+
     <Router>
       <Navbar />
       <Toaster position="top-right" />
