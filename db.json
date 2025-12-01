@@ -186,6 +186,24 @@
       "description": "hhhhhhhhh",
       "ingredients": "hhhhhh",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274837/wkmcadia0uqw1whaelq8.jpg"
+    },
+    {
+      "id": "378f",
+      "name": "tajin",
+      "country": "maroc",
+      "category": "afrecin",
+      "description": "hhh",
+      "ingredients": "hhh",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764338099/cs0xqsjbipbjxaerlpsl.jpg"
+    },
+    {
+      "id": "42bc",
+      "name": "tacos",
+      "country": "Mexico",
+      "category": "American",
+      "description": "hhh",
+      "ingredients": "hhh",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764338263/vilxucgbu8zokgv0vwwi.jpg"
     }
   ]
 }

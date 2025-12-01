@@ -66,17 +66,7 @@ export default function Details() {
   return (
     <div className="min-h-screen bg-stone-50 py-6 px-6 sm:px-20">
       <div className="max-w-5xl mx-auto">
-        {/* Navigation */}
-        <button
-          onClick={() => navigate("/recipes")}
-          className="group mb-8 inline-flex items-center gap-2 text-zinc-600 hover:text-yellow-600 transition-colors duration-200"
-        >
-          <div className="p-2 bg-white border border-zinc-200 rounded-full group-hover:border-yellow-500 transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-          </div>
-          <span className="font-medium">Back to Recipes</span>
-        </button>
-
+    
         <div className="bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
           {/* Hero Image */}
           {recipe.image && (
