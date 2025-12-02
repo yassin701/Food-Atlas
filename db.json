@@ -129,16 +129,6 @@
       "description": "Nouilles japonaises servies dans un bouillon riche.",
       "ingredients": "- nouilles\n- bouillon\n- poulet\n- œuf",
       "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
-    },
-    {
-      "id": "15",
-      "name": "Shakshuka",
-      "category": "Middle Eastern",
-      "country": "Tunisia",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254686/cart15_hro2bt.jpg",
-      "description": "Œufs pochés dans une sauce tomate épicée.",
-      "ingredients": "- tomates\n- œufs\n- poivrons\n- épices",
-      "steps": "1. Cuire tomates.\n2. Ajouter œufs.\n3. Servir."
     }
   ]
 }
