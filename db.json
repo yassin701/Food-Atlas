@@ -121,43 +121,14 @@
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
     },
     {
-      "id": "14",
-      "name": "Crêpes Françaises",
-      "category": "European",
-      "country": "France",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart14_pwpc6f.jpg",
-      "description": "Crêpes fines sucrées ou salées.",
-      "ingredients": "- farine\n- lait\n- œufs\n- beurre",
-      "steps": "1. Préparer pâte.\n2. Cuire.\n3. Garnir."
-    },
-    {
-      "id": "bb0c",
-      "name": "Pizza",
-      "country": "Morocco ",
-      "category": "African",
-      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "steps": "a\na\na\na",
-      "ingredients": "1\n1\n1\n1\n1",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764611631/xzmutxrj2i5ucyouibyk.jpg"
-    },
-    {
-      "id": "9305",
-      "name": "yassine",
-      "country": "Morocco",
-      "category": "African",
-      "description": "tesr",
-      "steps": "test",
-      "ingredients": "test",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764343382/bkofis1emuvfkdokqih7.jpg"
-    },
-    {
-      "id": "84de",
-      "name": "kjdvjDSV",
-      "country": "?DVNSD.V",
-      "category": "KDV.SLDV",
-      "description": "SNCJDKVKDVsdvodskv",
-      "ingredients": "la\nme\nfo",
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764604462/bidaw5znh0hcxmp3rgby.png"
+      "id": "13",
+      "name": "Ramen",
+      "category": "Asian",
+      "country": "Japan",
+      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart13_vuimp5.jpg",
+      "description": "Nouilles japonaises servies dans un bouillon riche.",
+      "ingredients": "- nouilles\n- bouillon\n- poulet\n- œuf",
+      "steps": "1. Préparer bouillon.\n2. Cuire nouilles.\n3. Assembler."
     }
   ]
 }
