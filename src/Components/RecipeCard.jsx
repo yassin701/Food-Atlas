@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+// Import React and necessary icons & components
+import React from "react";
 import { FaUtensils } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Pencil, Trash2 } from "lucide-react";
 
-
+// Helper function: returns country code based on country name
+// This code is used to generate the flag image URL
 const getCountryCode = (countryName) => {
   const codes = {
     Morocco: "MA",
@@ -20,13 +22,19 @@ const getCountryCode = (countryName) => {
     France: "FR",
     Tunisia: "TN",
   };
-  return codes[countryName] || "US";
+  return codes[countryName] || "US"; // Default: US if not found
 };
 
-// 1. Added onDelete to props
+// RecipesCard Component
+// Props:
+// - recipe: object that contains recipe info
+// - isAdmin: if true → show edit/delete buttons
+// - onDelete: function that triggers delete modal
 export default function RecipesCard({ recipe, isAdmin, onDelete }) {
   return (
     <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-200 flex flex-col h-full">
+
+      {/* Recipe Image */}
       <div className="overflow-hidden rounded-t-2xl h-56 shrink-0">
         <img
           src={recipe.image}
@@ -36,15 +44,22 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
       </div>
 
       <div className="p-6 flex flex-col flex-grow">
+
+        {/* Recipe Title + Category + Country Flag */}
         <div className="flex justify-between items-start mb-4">
           <div className="flex flex-col">
+            {/* Recipe Name */}
             <h5 className="text-xl font-serif font-bold text-zinc-950 line-clamp-1">
               {recipe.name}
             </h5>
+
+            {/* Category */}
             <span className="text-xs font-medium uppercase tracking-wider text-yellow-600">
               {recipe.category}
             </span>
           </div>
+
+          {/* Country flag */}
           <div className="shrink-0">
             <img
               src={`https://flagsapi.com/${getCountryCode(
@@ -56,15 +71,17 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
           </div>
         </div>
 
+        {/* Ingredients Count */}
         <div className="flex items-center text-gray-600 mb-6">
           <FaUtensils className="mr-2 text-yellow-500" />
+          {/* Split the ingredients by line and count them */}
           <span>{recipe.ingredients.split("\n").length} Ingredients</span>
         </div>
 
-        {/* Push buttons to the bottom */}
+        {/* Buttons Section - goes to the bottom */}
         <div className="mt-auto w-full">
-          
-          {/* 2. Logic Fixed: If NOT Admin, show View More */}
+
+          {/* If not admin → show View More button */}
           {!isAdmin && (
             <Link
               to={`/recipes/${recipe.id}`}
@@ -74,9 +91,11 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
             </Link>
           )}
 
-          {/* 3. Logic Fixed: If IS Admin, show Edit and Delete */}
+          {/* If admin → show Update & Delete buttons */}
           {isAdmin && (
             <div className="flex justify-between gap-3 w-full">
+
+              {/* Update Button */}
               <Link
                 to={`/admin/edit/${recipe.id}`}
                 className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm"
@@ -85,10 +104,10 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
                 Update
               </Link>
 
-              {/* Changed from Link to Button to trigger the Modal */}
+              {/* Delete Button (calls onDelete instead of navigating) */}
               <button
-                onClick={onDelete} 
-                className="flex-1 flex items-center justify-center gap-2 bg-red-600 hover:bg-red-500 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm cursor-pointer"
+                onClick={onDelete}
+                className="flex-1 flex items-center justify-center gap-2 bg-yellow-600 hover:bg-red-500 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm cursor-pointer"
               >
                 <Trash2 className="w-4 h-4" />
                 Delete
@@ -96,6 +115,7 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
             </div>
           )}
         </div>
+
       </div>
     </div>
       

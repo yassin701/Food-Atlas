@@ -9,14 +9,11 @@ import EditRecipe from "./pages/EditRecipes";
 import Admin from "./pages/Admin";
 
 
-
-
 function App() {
   return (
 
     <Router>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />   
         <Route path="/recipes" element={<Recipes />} /> 
@@ -25,7 +22,6 @@ function App() {
         <Route path="/admin/add" element={<AddRecipe />} />
         <Route path="/admin/edit" element={<EditRecipe />} />
         <Route path="/admin" element={<Admin />} />
-   
     
       </Routes>
     </Router>
