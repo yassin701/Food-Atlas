@@ -16,24 +16,24 @@ export default function Contact() {
     let newErrors = {};
     let isValid = true;
 
-    // Nom
+    // Name
     if (!form.name.trim()) {
-      newErrors.name = "Le nom est obligatoire.";
+      newErrors.name = "Name is required.";
       isValid = false;
     }
 
     // Email
     if (!form.email.trim()) {
-      newErrors.email = "L'email est obligatoire.";
+      newErrors.email = "Email is required.";
       isValid = false;
     } else if (!validateEmail(form.email)) {
-      newErrors.email = "Format d'email invalide.";
+      newErrors.email = "Invalid email format.";
       isValid = false;
     }
 
     // Message
     if (!form.message.trim()) {
-      newErrors.message = "Le message est obligatoire.";
+      newErrors.message = "Message is required.";
       isValid = false;
     }
 
@@ -41,7 +41,7 @@ export default function Contact() {
 
     if (!isValid) return;
 
-    // Si tout est OK :
+    // If everything is OK
     setSuccess(true);
     setForm({ name: "", email: "", message: "" });
 
@@ -52,25 +52,25 @@ export default function Contact() {
     <div className="max-w-[1300px] mx-auto p-5 flex justify-center">
       <div className="w-full max-w-[600px]">
 
-        <h1 className="text-yellow-500 text-[35px] mb-[25px] border-[#2e7d32] pl-[10px] uppercase tracking-[1px]">
-          Contactez-Nous
+        <h1 className="text-yellow-500 text-[35px] mb-[25px] border-[#2e7d32] pl-2.5 uppercase tracking-[1px]">
+          Contact Us
         </h1>
 
         {success && (
           <p className="text-green-600 font-semibold mb-4 text-center">
-            Message envoyé avec succès !
+            Message sent successfully!
           </p>
         )}
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-          {/* NOM */}
+          {/* NAME */}
           <div>
             <input
               className={`p-2 border ${
                 errors.name ? "border-red-500" : "border-gray-300"
               } rounded-[5px] w-full`}
-              placeholder="Nom"
+              placeholder="Name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
@@ -109,8 +109,8 @@ export default function Contact() {
             )}
           </div>
 
-          <button className="p-[10px] bg-yellow-500 text-white rounded-[5px] cursor-pointer hover:bg-yellow-500">
-            Envoyer
+          <button className="p-2.5 bg-yellow-500 text-white rounded-[5px] cursor-pointer hover:bg-yellow-500">
+            Send
           </button>
         </form>
 
