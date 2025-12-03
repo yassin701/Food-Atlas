@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
 import EditRecipe from "./pages/EditRecipes";
 import Admin from "./pages/Admin";
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
     
       </Routes>
+      <Footer />
     </Router>
   );
 }
