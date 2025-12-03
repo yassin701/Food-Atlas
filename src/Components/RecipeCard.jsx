@@ -106,5 +106,6 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
 
       </div>
     </div>
+      
   );
 }
