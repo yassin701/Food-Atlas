@@ -91,7 +91,8 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
               >
                 <Pencil className="w-4 h-4" />
                 Update
-              </Link>
+              </button>
+
 
               <button
                 onClick={onDelete}
@@ -106,6 +107,6 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
 
       </div>
     </div>
-      
+
   );
 }
