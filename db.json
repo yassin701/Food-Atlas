@@ -149,6 +149,7 @@
       "steps": "test",
       "ingredients": "test",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274337/onxcfbhd64fn7xvwk6gd.jpg"
     },
     {
@@ -203,6 +204,8 @@
       "category": "African",
       "description": "test",
       "ingredients": "test",
+=======
+>>>>>>> 2d5b14cec26f840c374942d542d7a0e72799b822
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764343382/bkofis1emuvfkdokqih7.jpg"
     },
     {
@@ -213,9 +216,12 @@
       "description": "SNCJDKVKDVsdvodskv",
       "ingredients": "la\nme\nfo",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764604462/bidaw5znh0hcxmp3rgby.png"
+<<<<<<< HEAD
 =======
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764611787/hymo8ttmrkewwhiirat1.jpg"
 >>>>>>> b640262748b9eafde3edbae18a2e5ce489427379
+=======
+>>>>>>> 2d5b14cec26f840c374942d542d7a0e72799b822
     }
   ]
 }
