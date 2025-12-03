@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
 import RecipeCard from "../Components/RecipeCard";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const [countryFilter, setCountryFilter] = useState("ALL");
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get("http://localhost:3001/recipes")
-      .then((response) => {
-        setRecipes(response.data);
-      })
-      .catch((error) => {
-        console.error("Erreur :", error);
-      });
+      .then((response) => setRecipes(response.data))
+      .catch((error) => console.error("Erreur :", error));
   }, []);
 
   const filteredRecipes =
@@ -25,13 +19,14 @@ export default function Recipes() {
       ? recipes
       : recipes.filter((recipe) => recipe.country === countryFilter);
 
+  // Function to get a random delay for each card
+  const getRandomDelay = () => Math.random() * 0.5; // random between 0 and 0.5 sec
+
   return (
     <div className="p-6">
       <div className="mb-6 mx-12 flex justify-between items-center">
-     
-
         <select
-          className="border border-zinc-200 p-2.5 rounded-lg bg-white shadow-sm text-zinc-600 group-hover:border-yellow-500 group-hover:text-yellow-600
+          className="border border-zinc-200 p-2.5 rounded-lg bg-white shadow-sm text-zinc-600
           transition-colors duration-200 cursor-pointer"
           value={countryFilter}
           onChange={(e) => setCountryFilter(e.target.value)}
@@ -47,7 +42,15 @@ export default function Recipes() {
 
       <div className="mb-6 mx-12 justify-between items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {filteredRecipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} isAdmin={false}/>
+          <motion.div
+            key={recipe.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }} // animation can repeat
+            transition={{ duration: 0.5, delay: getRandomDelay() }}
+          >
+            <RecipeCard recipe={recipe} isAdmin={false} />
+          </motion.div>
         ))}
       </div>
     </div>

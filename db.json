@@ -181,35 +181,6 @@
         "légumes"
       ],
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
-    },
-    {
-      "id": "1fe0",
-      "name": "hassna",
-      "country": "el hadri",
-      "category": "morocco",
-      "description": "hhhhhh",
-      "steps": "hhhhhhh",
-      "ingredients": [
-        "hh",
-        "fff",
-        "nnnn"
-      ],
-      "image": "C:\\fakepath\\i4.jpg",
-      "Image": {}
-    },
-    {
-      "id": "2bf5",
-      "name": "HHHH",
-      "country": "morocco",
-      "category": "afrique",
-      "description": "hhh",
-      "steps": "jh",
-      "ingredients": [
-        "yyy",
-        "hhh"
-      ],
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764757267/vwnydivpx9to4ly2onbt.jpg",
-      "Image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764759878/urxaqzsc1sqo0wyk8en4.jpg"
     }
   ]
 }
