@@ -29,7 +29,7 @@ export default function Navbar() {
       {/* Main Navbar */}
       <nav className="border-b border-zinc-950 bg-white">
         <div className="flex justify-between px-4 sm:px-8 items-center py-4">
-          <div className="text-2xl font-serif font-bold text-zinc-950">
+          <div className="text-2xl font-sans font-bold text-zinc-950">
             <a href="/">Food Atlas</a>
           </div>
 

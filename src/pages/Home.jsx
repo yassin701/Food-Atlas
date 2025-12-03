@@ -7,8 +7,6 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import videoBg from '../../public/Hero_Video_Generation_for_Food_Atlas.mp4'
 // import db from '../../db.json'; // Un-comment if needed for fallback, but we are using fetch now
 
