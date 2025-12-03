@@ -178,7 +178,7 @@ const categories = [
         >
           {ct}
         </li>
-      ))}
+      ))} 
     </ol>
   )}
 
