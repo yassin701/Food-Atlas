@@ -7,7 +7,13 @@
       "country": "Morocco",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252463/cart1_zodhyw.jpg",
       "description": "Un plat traditionnel marocain à base de semoule et légumes.",
-      "ingredients": "- semoule\n- légumes\n- poulet\n- épices\n- pois chiches",
+      "ingredients": [
+        "semoule",
+        "légumes",
+        "poulet",
+        "épices",
+        "pois chiches"
+      ],
       "steps": "1. Cuire la semoule.\n2. Préparer les légumes.\n3. Mélanger et servir."
     },
     {
@@ -17,7 +23,13 @@
       "country": "Mexico",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart2_qdoguy.jpg",
       "description": "Délicieux tacos garnis de viande et légumes frais.",
-      "ingredients": "- tortillas\n- viande hachée\n- tomates\n- salade\n- fromage",
+      "ingredients": [
+        "tortillas",
+        "viande hachée",
+        "tomates",
+        "salade",
+        "fromage"
+      ],
       "steps": "1. Cuire la viande.\n2. Garnir les tortillas.\n3. Ajouter toppings et servir."
     },
     {
@@ -27,7 +39,12 @@
       "country": "Italy",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart3_bnitkr.jpg",
       "description": "La pizza classique italienne avec tomate, mozzarella et basilic.",
-      "ingredients": "- pâte\n- tomate\n- mozzarella\n- basilic",
+      "ingredients": [
+        "pâte",
+        "tomate",
+        "mozzarella",
+        "basilic"
+      ],
       "steps": "1. Étaler la pâte.\n2. Ajouter la sauce.\n3. Cuire au four."
     },
     {
@@ -37,7 +54,12 @@
       "country": "Japan",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart4_lisd0n.jpg",
       "description": "Sushi traditionnel avec riz vinaigré et poisson frais.",
-      "ingredients": "- riz\n- saumon\n- algues\n- vinaigre",
+      "ingredients": [
+        "riz",
+        "saumon",
+        "algues",
+        "vinaigre"
+      ],
       "steps": "1. Préparer le riz.\n2. Rouler les sushi.\n3. Couper et servir."
     },
     {
@@ -47,7 +69,12 @@
       "country": "Thailand",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252781/cart5_sswg80.jpg",
       "description": "Nouilles sautées thaïlandaises aux légumes et crevettes.",
-      "ingredients": "- nouilles\n- crevettes\n- sauce soja\n- œufs",
+      "ingredients": [
+        "nouilles",
+        "crevettes",
+        "sauce soja",
+        "œufs"
+      ],
       "steps": "1. Cuire les nouilles.\n2. Sauter les légumes.\n3. Mélanger et servir."
     },
     {
@@ -57,7 +84,13 @@
       "country": "USA",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254694/cart6_cejiwu.jpg",
       "description": "Burger classique avec steak, fromage et légumes.",
-      "ingredients": "- pain\n- steak\n- fromage\n- salade\n- tomates",
+      "ingredients": [
+        "pain",
+        "steak",
+        "fromage",
+        "salade",
+        "tomates"
+      ],
       "steps": "1. Cuire le steak.\n2. Monter le burger.\n3. Servir."
     },
     {
@@ -67,7 +100,12 @@
       "country": "Morocco",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254693/cart7_qm4owb.jpg",
       "description": "Poulet mijoté aux olives et citron confit.",
-      "ingredients": "- poulet\n- citron confit\n- olives\n- épices",
+      "ingredients": [
+        "poulet",
+        "citron confit",
+        "olives",
+        "épices"
+      ],
       "steps": "1. Mijoter le poulet.\n2. Ajouter olives.\n3. Servir chaud."
     },
     {
@@ -77,7 +115,12 @@
       "country": "Lebanon",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart8_kymnml.jpg",
       "description": "Boulettes de pois chiches frites.",
-      "ingredients": "- pois chiches\n- ail\n- persil\n- cumin",
+      "ingredients": [
+        "pois chiches",
+        "ail",
+        "persil",
+        "cumin"
+      ],
       "steps": "1. Mixer pois chiches.\n2. Former boules.\n3. Frire."
     },
     {
@@ -87,7 +130,12 @@
       "country": "Spain",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart9_pb53br.jpg",
       "description": "Riz espagnol aux fruits de mer et légumes.",
-      "ingredients": "- riz\n- crevettes\n- moules\n- poivrons",
+      "ingredients": [
+        "riz",
+        "crevettes",
+        "moules",
+        "poivrons"
+      ],
       "steps": "1. Cuire riz.\n2. Ajouter fruits de mer.\n3. Mélanger."
     },
     {
@@ -97,7 +145,12 @@
       "country": "India",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254688/cart10_krhyhn.jpg",
       "description": "Poulet crémeux aux épices indiennes.",
-      "ingredients": "- poulet\n- crème\n- épices\n- tomates",
+      "ingredients": [
+        "poulet",
+        "crème",
+        "épices",
+        "tomates"
+      ],
       "steps": "1. Cuire poulet.\n2. Ajouter sauce.\n3. Laisser mijoter."
     },
     {
@@ -107,7 +160,11 @@
       "country": "UK",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart11_mipy6u.jpg",
       "description": "Poisson frit servi avec frites croustillantes.",
-      "ingredients": "- poisson\n- farine\n- pommes de terre",
+      "ingredients": [
+        "poisson",
+        "farine",
+        "pommes de terre"
+      ],
       "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
     },
     {
@@ -117,7 +174,12 @@
       "country": "Turkey",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart12_jiqtr1.jpg",
       "description": "Sandwich oriental garni de viande marinée.",
-      "ingredients": "- poulet\n- épices\n- pain pita\n- légumes",
+      "ingredients": [
+        "poulet",
+        "épices",
+        "pain pita",
+        "légumes"
+      ],
       "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
     },
     {
@@ -148,8 +210,6 @@
       "description": "tesr",
       "steps": "test",
       "ingredients": "test",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764274337/onxcfbhd64fn7xvwk6gd.jpg"
     },
     {
@@ -204,8 +264,6 @@
       "category": "African",
       "description": "test",
       "ingredients": "test",
-=======
->>>>>>> 2d5b14cec26f840c374942d542d7a0e72799b822
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764343382/bkofis1emuvfkdokqih7.jpg"
     },
     {
@@ -216,12 +274,8 @@
       "description": "SNCJDKVKDVsdvodskv",
       "ingredients": "la\nme\nfo",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764604462/bidaw5znh0hcxmp3rgby.png"
-<<<<<<< HEAD
-=======
-      "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764611787/hymo8ttmrkewwhiirat1.jpg"
->>>>>>> b640262748b9eafde3edbae18a2e5ce489427379
-=======
->>>>>>> 2d5b14cec26f840c374942d542d7a0e72799b822
+
+
     }
   ]
 }
