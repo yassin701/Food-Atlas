@@ -128,13 +128,13 @@ export default function Admin() {
             <div className="bg-stone-50 px-6 py-4 flex gap-3 justify-end">
               <button
                 onClick={closeDeleteModal}
-                className="px-4 py-2 rounded-lg text-zinc-600 font-medium hover:bg-zinc-200 transition"
+                className="px-4 py-2 rounded-lg text-zinc-600 font-medium cursor-pointer hover:bg-zinc-200 transition"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmDelete}
-                className="px-4 py-2 rounded-lg bg-red-500 text-white font-medium hover:bg-red-600 shadow-md flex items-center gap-2 transition"
+                className="px-4 py-2 rounded-lg bg-red-500 cursor-pointer text-white font-medium hover:bg-red-600 shadow-md flex items-center gap-2 transition"
               >
                 <Trash2 className="w-4 h-4" />
                 Delete

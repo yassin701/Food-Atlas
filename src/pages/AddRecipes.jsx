@@ -18,6 +18,25 @@ export default function AddRecipe() {
 
   const navigate = useNavigate();
 
+  const [showCountryList, setShowCountryList] = useState(false);
+  const [showCategoryList, setShowCategoryList] = useState(false);
+    
+  const countries = [
+  "Turkey", "Morocco", "Mexico", "Italy", "Japan",
+  "Thailand", "USA", "Lebanon", "Spain", "India",
+  "UK", "France", "Tunisia"
+];
+
+const categories = [
+  "Middle Eastern",
+  "Mediterranean",
+  "Asian",
+  "African",
+  "European",
+  "American",
+  "Fusion"
+];
+
   // Cloudinary
   const CLOUD_NAME = "dqronp5bo";
   const UPLOAD_PRESET = "food_uploads";
@@ -127,27 +146,89 @@ export default function AddRecipe() {
             {errors.name && <p className="text-red-500 mt-1 text-sm">{errors.name}</p>}
           </div>
 
-          {/* Country */}
-          <div>
-            <input
-              placeholder="Country"
-              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-            />
-            {errors.country && <p className="text-red-500 mt-1 text-sm">{errors.country}</p>}
-          </div>
+<div className="relative">
+  <div className="flex items-center border border-gray-300 rounded-lg">
+    <input
+      placeholder="Country"
+      className="w-full p-3 rounded-lg focus:outline-none"
+      value={country}
+      readOnly
+    />
 
-          {/* Category */}
-          <div>
-            <input
-              placeholder="Category"
-              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-            {errors.category && <p className="text-red-500 mt-1 text-sm">{errors.category}</p>}
-          </div>
+    {/* Icon */}
+    <button
+      type="button"
+      onClick={() => setShowCountryList(!showCountryList)}
+      className="px-3 text-gray-500 hover:text-black"
+    >
+      ▼
+    </button>
+  </div>
+
+  {showCountryList && (
+    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10">
+      {countries.map((ct, i) => (
+        <li
+          key={i}
+          className="p-3 hover:bg-gray-100 cursor-pointer"
+          onClick={() => {
+            setCountry(ct);
+            setShowCountryList(false);
+          }}
+        >
+          {ct}
+        </li>
+      ))} 
+    </ol>
+  )}
+
+  {errors.country && (
+    <p className="text-red-500 mt-1 text-sm">{errors.country}</p>
+  )}
+</div>
+
+
+<div className="relative">
+  <div className="flex items-center border border-gray-300 rounded-lg">
+    <input
+      placeholder="Category"
+      className="w-full p-3 rounded-lg focus:outline-none"
+      value={category}
+      readOnly
+    />
+
+    {/* Icon */}
+    <button
+      type="button"
+      onClick={() => setShowCategoryList(!showCategoryList)}
+      className="px-3 text-gray-500 hover:text-black"
+    >
+      ▼
+    </button>
+  </div>
+
+  {showCategoryList && (
+    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10">
+      {categories.map((cat, i) => (
+        <li
+          key={i}
+          className="p-3 hover:bg-gray-100 cursor-pointer"
+          onClick={() => {
+            setCategory(cat);
+            setShowCategoryList(false);
+          }}
+        >
+          {cat}
+        </li>
+      ))}
+    </ol>
+  )}
+
+  {errors.category && (
+    <p className="text-red-500 mt-1 text-sm">{errors.category}</p>
+  )}
+</div>
+
 
           {/* Description */}
           <div>
