@@ -24,7 +24,7 @@ const getCountryCode = (countryName) => {
   return codes[countryName] || "US";
 };
 
-export default function RecipesCard({ recipe, isAdmin, onDelete }) {
+export default function RecipesCard({ recipe, isAdmin, onDelete , onEdit}) {
   return (
     <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-200 flex flex-col h-full">
 
@@ -85,9 +85,9 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
 
           {isAdmin && (
             <div className="flex justify-between gap-3 w-full">
-              <Link
-                to={`/admin/edit/${recipe.id}`}
-                className="flex-1 flex items-center justify-center gap-2 bg-green-300 hover:bg-green-700 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm"
+              <button
+                onClick={() => onEdit(recipe)}
+                className="flex-1 flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-300 cursor-pointer text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm"
               >
                 <Pencil className="w-4 h-4" />
                 Update
@@ -96,7 +96,7 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
 
               <button
                 onClick={onDelete}
-                className="flex-1 flex items-center justify-center gap-2 bg-red-500 hover:bg-red-700 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm cursor-pointer"
+                className="flex-1 flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-300 text-white px-4 py-2.5 rounded-md text-sm font-medium transition shadow-sm cursor-pointer"
               >
                 <Trash2 className="w-4 h-4" />
                 Delete

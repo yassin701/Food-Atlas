@@ -64,18 +64,22 @@ export default function Admin() {
     return res.data.secure_url;  // ✔ return the uploaded image URL
 
     }
-const handleChange =async (e)=>{
-      const file = e.target.files[0];   
-        const imageUrl = await uploadToCloudinary(file);
-        
-          setRecipeToEdit(prev => ({
+const handleChange = async (e) => {
+  const file = e.target.files[0];   
+  const imageUrl = await uploadToCloudinary(file);
+
+  setRecipeToEdit(prev => ({
     ...prev,
-      image: imageUrl
+    image: imageUrl
   }));
-return imageUrl
 
-}
-
+  // Update the recipes array so the card shows the new image
+  setRecipes(prevRecipes =>
+    prevRecipes.map(r =>
+      r.id === recipeToEdit.id ? { ...r, image: imageUrl } : r
+    )
+  );
+};
 
 
 
