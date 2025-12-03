@@ -43,7 +43,7 @@ export default function RecipesCard({ recipe, isAdmin, onDelete }) {
         />
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
 
         {/* Recipe Title + Category + Country Flag */}
         <div className="flex justify-between items-start mb-4">
