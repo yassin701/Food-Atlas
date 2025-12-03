@@ -21,7 +21,7 @@ export default function Recipes() {
 
   // Function to get a random delay for each card
   const getRandomDelay = () => Math.random() * 0.5; // random between 0 and 0.5 sec
-console.log("-======= dqns recipes js = " , recipes[14] )
+
   return (
     <div className="p-6">
       <div className="mb-6 mx-12 flex justify-between items-center">
