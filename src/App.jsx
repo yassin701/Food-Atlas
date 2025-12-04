@@ -5,7 +5,7 @@ import Details from "./pages/Details";
 import AddRecipe from "./pages/AddRecipes";
 import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
-import EditRecipe from "./pages/EditRecipes";
+
 import Admin from "./pages/Admin";
 import Footer from "./Components/Footer";
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/recipes/:id" element={<Details />} /> 
         <Route path="/admin/add" element={<AddRecipe />} />
-        <Route path="/admin/edit" element={<EditRecipe />} />
+
         <Route path="/admin" element={<Admin />} />
     
       </Routes>
