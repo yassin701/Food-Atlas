@@ -20,7 +20,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/recipes/:id" element={<Details />} /> 
         <Route path="/admin/add" element={<AddRecipe />} />
-
         <Route path="/admin" element={<Admin />} />
     
       </Routes>
