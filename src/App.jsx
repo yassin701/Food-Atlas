@@ -5,7 +5,6 @@ import Details from "./pages/Details";
 import AddRecipe from "./pages/AddRecipes";
 import Navbar from "./Components/Navbar";
 import Contact from "./pages/Contact";
-
 import Admin from "./pages/Admin";
 import Footer from "./Components/Footer";
 
