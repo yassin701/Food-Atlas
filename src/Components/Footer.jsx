@@ -29,7 +29,7 @@ export default function Footer() {
             <h3 className="font-medium text-lg mb-2">Explore</h3>
             <FooterLink href="/" label="Home" />
             <FooterLink href="/recipes" label="Recipes" />
-            <FooterLink href="/blog" label="Culinary Stories" />
+            <FooterLink href="/admin" label="Admin"/>
             <FooterLink href="/contact" label="Contact" />
           </div>
 
