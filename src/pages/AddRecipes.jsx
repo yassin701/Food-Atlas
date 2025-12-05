@@ -15,6 +15,7 @@ export default function AddRecipe() {
   const [imageFile, setImageFile] = useState(null);
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -47,9 +48,9 @@ const categories = [
     formData.append("upload_preset", UPLOAD_PRESET);
 
     const res = await axios.post(
-      `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
-      formData
-    );
+  `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+  formData
+);
 
     return res.data.secure_url;
   };
@@ -96,39 +97,50 @@ const categories = [
     setErrors({});
     setShowModal(true);
   };
+const handleConfirm = async () => {
+  setShowModal(false);  // hide modal immediately
+  setLoading(true);     // show loading overlay
 
-  // Confirm add
-  const handleConfirm = async () => {
-    setShowModal(false);
+  try {
+    const imageUrl = await uploadToCloudinary(imageFile);
 
-    try {
-      const imageUrl = await uploadToCloudinary(imageFile);
+    const recipeData = {
+      name,
+      country,
+      category,
+      description,
+      steps,
+      ingredients,
+      image: imageUrl,
+    };
 
-      const recipeData = {
-        name,
-        country,
-        category,
-        description,
-        steps,
-        ingredients, // send as array
-        image: imageUrl,
-      };
+    await axios.post("http://localhost:3001/recipes", recipeData);
 
-      await axios.post("http://localhost:3001/recipes", recipeData);
+    toast.success("Recette ajoutée avec succès ! 🎉");
 
-      toast.success("Recette ajoutée avec succès ! 🎉");
-
-      setTimeout(() => navigate("/admin"), 600);
-    } catch (error) {
-      console.error(error);
-      toast.error("Erreur lors de l'ajout ❌");
-    }
-  };
+    setTimeout(() => navigate("/admin"), 1500);
+  } catch (error) {
+    console.error(error);
+    toast.error("Erreur lors de l'ajout ❌");
+  } finally {
+    setLoading(false);  // hide loading
+  }
+};
 
   const handleCancel = () => setShowModal(false);
 
   return (
-    <div className="flex justify-center mt-12 px-4">
+   <>
+    {loading && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+    <div className="bg-white p-6 rounded-xl shadow-lg flex items-center gap-3">
+      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-gray-900"></div>
+      <span>Loading...</span>
+    </div>
+  </div>
+)}
+
+    <div className="flex justify-center mt-12 mb-7 px-4">
       <form className="w-full max-w-lg bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
         <h2 className="text-3xl font-bold mb-8 text-center text-orange-400">
           Add a Recipe
@@ -146,31 +158,31 @@ const categories = [
             {errors.name && <p className="text-red-500 mt-1 text-sm">{errors.name}</p>}
           </div>
 
+{/* Country */}
 <div className="relative">
-  <div className="flex items-center border border-gray-300 rounded-lg">
+  <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
+  <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white">
     <input
       placeholder="Country"
-      className="w-full p-3 rounded-lg focus:outline-none"
+      className="w-full focus:outline-none"
       value={country}
       readOnly
+      onClick={() => setShowCountryList(!showCountryList)}
     />
-
-    {/* Icon */}
     <button
       type="button"
+      className="text-gray-500 hover:text-black px-2"
       onClick={() => setShowCountryList(!showCountryList)}
-      className="px-3 text-gray-500 hover:text-black"
     >
       ▼
     </button>
   </div>
-
   {showCountryList && (
-    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10">
+    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg max-h-40 overflow-y-auto z-50">
       {countries.map((ct, i) => (
         <li
           key={i}
-          className="p-3 hover:bg-gray-100 cursor-pointer"
+          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
           onClick={() => {
             setCountry(ct);
             setShowCountryList(false);
@@ -178,41 +190,39 @@ const categories = [
         >
           {ct}
         </li>
-      ))} 
+      ))}
     </ol>
   )}
-
   {errors.country && (
     <p className="text-red-500 mt-1 text-sm">{errors.country}</p>
   )}
 </div>
 
-
+{/* Category */}
 <div className="relative">
-  <div className="flex items-center border border-gray-300 rounded-lg">
+  <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+  <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white">
     <input
       placeholder="Category"
-      className="w-full p-3 rounded-lg focus:outline-none"
+      className="w-full focus:outline-none"
       value={category}
       readOnly
+      onClick={() => setShowCategoryList(!showCategoryList)}
     />
-
-    {/* Icon */}
     <button
       type="button"
+      className="text-gray-500 hover:text-black px-2"
       onClick={() => setShowCategoryList(!showCategoryList)}
-      className="px-3 text-gray-500 hover:text-black"
     >
       ▼
     </button>
   </div>
-
   {showCategoryList && (
-    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg z-10">
+    <ol className="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg max-h-40 overflow-y-auto z-50">
       {categories.map((cat, i) => (
         <li
           key={i}
-          className="p-3 hover:bg-gray-100 cursor-pointer"
+          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
           onClick={() => {
             setCategory(cat);
             setShowCategoryList(false);
@@ -223,7 +233,6 @@ const categories = [
       ))}
     </ol>
   )}
-
   {errors.category && (
     <p className="text-red-500 mt-1 text-sm">{errors.category}</p>
   )}
@@ -283,7 +292,6 @@ const categories = [
                 className=" bg-yellow-500 text-white px-4 py-2 cursor-pointer rounded-lg flex items-center gap-1"
               >
                 <Plus className="w-4 h-4" />
-                Add
               </button>
             </div>
             {errors.ingredients && <p className="text-red-500 mt-1 text-sm">{errors.ingredients}</p>}
@@ -306,7 +314,7 @@ const categories = [
           onClick={handleAddClick}
           className="w-full bg-yellow-500 hover:bg-yellow-600 mt-4 cursor-pointer text-white py-2 rounded-lg font-semibold"
         >
-          Ajouter
+          Add
         </button>
       </form>
 
@@ -357,5 +365,6 @@ const categories = [
 
       <Toaster position="top-center" />
     </div>
+    </>
   );
 }
