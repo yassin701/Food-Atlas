@@ -25,7 +25,7 @@ export default function AddRecipe() {
   const countries = [
   "Turkey", "Morocco", "Mexico", "Italy", "Japan",
   "Thailand", "USA", "Lebanon", "Spain", "India",
-  "UK", "France", "Tunisia"
+  "UK", "France", "Tunisia",
 ];
 
 const categories = [

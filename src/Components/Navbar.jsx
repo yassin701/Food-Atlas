@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="header-container sticky top-0 z-50 bg-white">
+    <header className="header-container sticky top-0 z-100 bg-white">
       {/* Utility Bar */}
       <div className="bg-yellow-400 text-white">
         <div className="flex justify-between p-2 px-4 sm:px-8">
