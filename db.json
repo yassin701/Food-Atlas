@@ -2,112 +2,112 @@
   "recipes": [
     {
       "id": "1",
-      "name": "Couscous Marocain",
+      "name": "Moroccan Couscous",
       "category": "African",
       "country": "Morocco",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252463/cart1_zodhyw.jpg",
-      "description": "Un plat traditionnel marocain à base de semoule et légumes.",
+      "description": "A traditional Moroccan dish made with semolina and vegetables.",
       "ingredients": [
-        "semoule",
-        "légumes",
-        "poulet",
-        "épices",
-        "pois chiches"
+        "semolina",
+        "vegetables",
+        "chicken",
+        "spices",
+        "chickpeas"
       ],
-      "steps": "1. Cuire la semoule.\n2. Préparer les légumes.\n3. Mélanger et servir."
+      "steps": "1. Cook the semolina.\n2. Prepare the vegetables.\n3. Mix and serve."
     },
     {
       "id": "2",
-      "name": "Tacos Mexicains",
+      "name": "Mexican Tacos",
       "category": "American",
       "country": "Mexico",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart2_qdoguy.jpg",
-      "description": "Délicieux tacos garnis de viande et légumes frais.",
+      "description": "Delicious tacos filled with meat and fresh vegetables.",
       "ingredients": [
         "tortillas",
-        "viande hachée",
-        "tomates",
-        "salade",
-        "fromage"
+        "ground meat",
+        "tomatoes",
+        "lettuce",
+        "cheese"
       ],
-      "steps": "1. Cuire la viande.\n2. Garnir les tortillas.\n3. Ajouter toppings et servir."
+      "steps": "1. Cook the meat.\n2. Fill the tortillas.\n3. Add toppings and serve."
     },
     {
       "id": "3",
-      "name": "Pizza Margherita",
+      "name": "Margherita Pizza",
       "category": "European",
       "country": "Italy",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart3_bnitkr.jpg",
-      "description": "La pizza classique italienne avec tomate, mozzarella et basilic.",
+      "description": "The classic Italian pizza with tomato, mozzarella, and basil.",
       "ingredients": [
-        "pâte",
-        "tomate",
+        "dough",
+        "tomato",
         "mozzarella",
-        "basilic",
+        "basil",
         "JB"
       ],
-      "steps": "1. Étaler la pâte.\n2. Ajouter la sauce.\n3. Cuire au four."
+      "steps": "1. Spread the dough.\n2. Add the sauce.\n3. Bake in the oven."
     },
     {
       "id": "4",
-      "name": "Sushi Japonais",
+      "name": "Japanese Sushi",
       "category": "Asian",
       "country": "Japan",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252782/cart4_lisd0n.jpg",
-      "description": "Sushi traditionnel avec riz vinaigré et poisson frais.",
+      "description": "Traditional sushi with vinegared rice and fresh fish.",
       "ingredients": [
-        "riz",
-        "saumon",
-        "algues",
-        "vinaigre"
+        "rice",
+        "salmon",
+        "seaweed",
+        "vinegar"
       ],
-      "steps": "1. Préparer le riz.\n2. Rouler les sushi.\n3. Couper et servir."
+      "steps": "1. Prepare the rice.\n2. Roll the sushi.\n3. Cut and serve."
     },
     {
       "id": "5",
-      "name": "Pad Thaï",
+      "name": "Pad Thai",
       "category": "Asian",
       "country": "Thailand",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764252781/cart5_sswg80.jpg",
-      "description": "Nouilles sautées thaïlandaises aux légumes et crevettes.",
+      "description": "Thai stir-fried noodles with vegetables and shrimp.",
       "ingredients": [
-        "nouilles",
-        "crevettes",
-        "sauce soja",
-        "œufs"
+        "noodles",
+        "shrimp",
+        "soy sauce",
+        "eggs"
       ],
-      "steps": "1. Cuire les nouilles.\n2. Sauter les légumes.\n3. Mélanger et servir."
+      "steps": "1. Cook the noodles.\n2. Stir-fry the vegetables.\n3. Mix and serve."
     },
     {
       "id": "6",
-      "name": "Burger Américain",
+      "name": "American Burger",
       "category": "American",
       "country": "USA",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254694/cart6_cejiwu.jpg",
-      "description": "Burger classique avec steak, fromage et légumes.",
+      "description": "Classic burger with beef patty, cheese, and vegetables.",
       "ingredients": [
-        "pain",
-        "steak",
-        "fromage",
-        "salade",
-        "tomates"
+        "bun",
+        "beef patty",
+        "cheese",
+        "lettuce",
+        "tomatoes"
       ],
-      "steps": "1. Cuire le steak.\n2. Monter le burger.\n3. Servir."
+      "steps": "1. Cook the beef patty.\n2. Assemble the burger.\n3. Serve."
     },
     {
       "id": "7",
-      "name": "Tajine de Poulet",
+      "name": "Chicken Tagine",
       "category": "African",
       "country": "Morocco",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254693/cart7_qm4owb.jpg",
-      "description": "Poulet mijoté aux olives et citron confit.",
+      "description": "Chicken slow-cooked with olives and preserved lemon.",
       "ingredients": [
-        "poulet",
-        "citron confit",
+        "chicken",
+        "preserved lemon",
         "olives",
-        "épices"
+        "spices"
       ],
-      "steps": "1. Mijoter le poulet.\n2. Ajouter olives.\n3. Servir chaud."
+      "steps": "1. Slow-cook the chicken.\n2. Add olives.\n3. Serve hot."
     },
     {
       "id": "8",
@@ -115,14 +115,14 @@
       "category": "Middle Eastern",
       "country": "Lebanon",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart8_kymnml.jpg",
-      "description": "Boulettes de pois chiches frites.",
+      "description": "Fried chickpea balls.",
       "ingredients": [
-        "pois chiches",
-        "ail",
-        "persil",
+        "chickpeas",
+        "garlic",
+        "parsley",
         "cumin"
       ],
-      "steps": "1. Mixer pois chiches.\n2. Former boules.\n3. Frire."
+      "steps": "1. Blend the chickpeas.\n2. Form balls.\n3. Fry."
     },
     {
       "id": "9",
@@ -130,14 +130,14 @@
       "category": "European",
       "country": "Spain",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart9_pb53br.jpg",
-      "description": "Riz espagnol aux fruits de mer et légumes.",
+      "description": "Spanish rice with seafood and vegetables.",
       "ingredients": [
-        "riz",
-        "crevettes",
-        "moules",
-        "poivrons"
+        "rice",
+        "shrimp",
+        "mussels",
+        "bell peppers"
       ],
-      "steps": "1. Cuire riz.\n2. Ajouter fruits de mer.\n3. Mélanger."
+      "steps": "1. Cook the rice.\n2. Add seafood.\n3. Mix."
     },
     {
       "id": "10",
@@ -145,14 +145,14 @@
       "category": "Asian",
       "country": "India",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254688/cart10_krhyhn.jpg",
-      "description": "Poulet crémeux aux épices indiennes.",
+      "description": "Creamy chicken cooked with Indian spices.",
       "ingredients": [
-        "poulet",
-        "crème",
-        "épices",
-        "tomates"
+        "chicken",
+        "cream",
+        "spices",
+        "tomatoes"
       ],
-      "steps": "1. Cuire poulet.\n2. Ajouter sauce.\n3. Laisser mijoter."
+      "steps": "1. Cook the chicken.\n2. Add the sauce.\n3. Let simmer."
     },
     {
       "id": "11",
@@ -160,28 +160,28 @@
       "category": "European",
       "country": "UK",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart11_mipy6u.jpg",
-      "description": "Poisson frit servi avec frites croustillantes.",
+      "description": "Fried fish served with crispy fries.",
       "ingredients": [
-        "poisson",
-        "farine",
-        "pommes de terre"
+        "fish",
+        "flour",
+        "potatoes"
       ],
-      "steps": "1. Préparer pâte.\n2. Frire poisson.\n3. Servir avec frites."
+      "steps": "1. Prepare the batter.\n2. Fry the fish.\n3. Serve with fries."
     },
     {
       "id": "12",
-      "name": "Chawarma",
+      "name": "Shawarma",
       "category": "Middle Eastern",
       "country": "Turkey",
       "image": "https://res.cloudinary.com/dqronp5bo/image/upload/v1764254687/cart12_jiqtr1.jpg",
-      "description": "Sandwich oriental garni de viande marinée.",
+      "description": "Middle Eastern sandwich filled with marinated meat.",
       "ingredients": [
-        "poulet",
-        "épices",
-        "pain pita",
-        "légumes"
+        "chicken",
+        "spices",
+        "pita bread",
+        "vegetables"
       ],
-      "steps": "1. Mariner la viande.\n2. Cuire.\n3. Rouler dans pita."
+      "steps": "1. Marinate the meat.\n2. Cook.\n3. Wrap in pita."
     }
   ]
 }
