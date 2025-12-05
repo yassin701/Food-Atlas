@@ -10,7 +10,7 @@ export default function Footer() {
           
           {/* Brand Column (Span 5) */}
           <div className="md:col-span-5 flex flex-col gap-6">
-            <h2 className="text-3xl font-serif font-bold tracking-tight">
+            <h2 className="text-3xl font-sans font-bold tracking-tight">
               Food Atlas
             </h2>
             <p className="text-zinc-600 leading-relaxed max-w-sm">
@@ -29,7 +29,6 @@ export default function Footer() {
             <h3 className="font-medium text-lg mb-2">Explore</h3>
             <FooterLink href="/" label="Home" />
             <FooterLink href="/recipes" label="Recipes" />
-            <FooterLink href="/admin" label="Admin"/>
             <FooterLink href="/contact" label="Contact" />
           </div>
 
