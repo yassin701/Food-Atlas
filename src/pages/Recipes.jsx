@@ -36,7 +36,15 @@ export default function Recipes() {
           <option value="Italy">Italy</option>
           <option value="Spain">Spain</option>
           <option value="France">France</option>
+          <option value="Turkey">Turkey</option>
           <option value="Mexico">Mexico</option>
+          <option value="Japan">Japan</option>
+          <option value="Thailand">Thailand</option>
+          <option value="USA">USA</option>
+          <option value="Lebanon">Lebanon</option>
+          <option value="India">India</option>
+          <option value="UK">UK</option>
+          <option value="Tunisia">Tunisia</option>
         </select>
       </div>
 
